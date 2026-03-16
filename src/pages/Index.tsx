@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useCallback } from 'react';
 import Header from '@/components/Header';
 import CategoryNav from '@/components/CategoryNav';
 import LiveScores from '@/components/LiveScores';
@@ -11,8 +11,39 @@ import MobileMenu from '@/components/MobileMenu';
 import SearchOverlay from '@/components/SearchOverlay';
 import Footer from '@/components/Footer';
 import { newsData } from '@/data/newsData';
+import { RefreshCw } from 'lucide-react';
 
 type View = 'feed' | 'article' | 'standings';
+
+interface UpcomingGame {
+  id: string;
+  home: string;
+  away: string;
+  league: string;
+  date: string;
+  commence: string;
+  icon: string;
+}
+
+const SPORT_ICONS: Record<string, string> = {
+  'Brasileirão': '🇧🇷',
+  'Champions League': '🏆',
+  'Premier League': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  'La Liga': '🇪🇸',
+  'NBA': '🏀',
+  'UFC': '🥊',
+};
+
+const UPCOMING_SPORTS = [
+  { key: 'soccer_brazil_campeonato', name: 'Brasileirão' },
+  { key: 'soccer_epl', name: 'Premier League' },
+  { key: 'soccer_spain_la_liga', name: 'La Liga' },
+  { key: 'soccer_uefa_champs_league', name: 'Champions League' },
+  { key: 'basketball_nba', name: 'NBA' },
+  { key: 'mma_mixed_martial_arts', name: 'UFC' },
+];
+
+const API_KEY = 'f28768e29f8725ea120da36191ee08fe';
 
 const Index = () => {
   const [view, setView] = useState<View>('feed');
@@ -20,6 +51,8 @@ const Index = () => {
   const [selectedArticleId, setSelectedArticleId] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [upcomingGames, setUpcomingGames] = useState<UpcomingGame[]>([]);
+  const [gamesLoading, setGamesLoading] = useState(true);
 
   const filteredNews = useMemo(() => {
     if (activeCategory === 'all') return newsData;
@@ -38,6 +71,53 @@ const Index = () => {
     setView('article');
     window.scrollTo(0, 0);
   };
+
+  const fetchUpcomingGames = useCallback(async () => {
+    setGamesLoading(true);
+    try {
+      const results = await Promise.allSettled(
+        UPCOMING_SPORTS.map(async (sport) => {
+          const res = await fetch(
+            `https://api.the-odds-api.com/v4/sports/${sport.key}/scores/?apiKey=${API_KEY}&daysFrom=3`
+          );
+          if (!res.ok) return [];
+          const data = await res.json();
+          return data
+            .filter((g: any) => !g.completed && !g.scores)
+            .slice(0, 4)
+            .map((g: any) => ({
+              id: g.id,
+              home: g.home_team,
+              away: g.away_team,
+              league: sport.name,
+              date: new Date(g.commence_time).toLocaleDateString('pt-BR', {
+                weekday: 'short',
+                hour: '2-digit',
+                minute: '2-digit',
+              }),
+              commence: g.commence_time,
+              icon: SPORT_ICONS[sport.name] || '⚽',
+            }));
+        })
+      );
+
+      const allGames = results
+        .filter((r): r is PromiseFulfilledResult<UpcomingGame[]> => r.status === 'fulfilled')
+        .flatMap((r) => r.value)
+        .sort((a, b) => new Date(a.commence).getTime() - new Date(b.commence).getTime())
+        .slice(0, 12);
+
+      setUpcomingGames(allGames);
+    } catch {
+      // Keep empty
+    } finally {
+      setGamesLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchUpcomingGames();
+  }, [fetchUpcomingGames]);
 
   const selectedArticle = newsData.find((n) => n.id === selectedArticleId);
 
@@ -105,35 +185,44 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Upcoming Games Section */}
+          {/* Upcoming Games Section - API powered */}
           <div>
             <div className="flex justify-between items-center mb-5 pb-2 border-b-[3px] border-primary">
               <h2 className="text-lg font-extrabold uppercase flex items-center gap-2">
                 📅 Jogos da Semana
               </h2>
+              <button
+                onClick={fetchUpcomingGames}
+                className="text-primary text-xs font-semibold flex items-center gap-1 hover:underline"
+              >
+                <RefreshCw size={12} className={gamesLoading ? 'animate-spin' : ''} />
+                Atualizar
+              </button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {[
-                { home: 'Flamengo', away: 'Palmeiras', league: 'Brasileirão', date: 'Dom, 17:00', status: 'scheduled' },
-                { home: 'Real Madrid', away: 'Barcelona', league: 'La Liga', date: 'Sáb, 16:00', status: 'scheduled' },
-                { home: 'Lakers', away: 'Celtics', league: 'NBA', date: 'Sex, 21:30', status: 'scheduled' },
-                { home: 'Alex Pereira', away: 'Ankalaev', league: 'UFC', date: 'Sáb, 23:00', status: 'scheduled' },
-                { home: 'Liverpool', away: 'Arsenal', league: 'Premier League', date: 'Dom, 13:30', status: 'scheduled' },
-                { home: 'Inter', away: 'Juventus', league: 'Serie A', date: 'Dom, 15:45', status: 'scheduled' },
-              ].map((game, i) => (
-                <div key={i} className="bg-card rounded-xl p-4 border border-border hover:border-primary transition-all">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-bold text-muted-foreground uppercase">{game.league}</span>
-                    <span className="text-info text-xs font-bold">{game.date}</span>
+            {gamesLoading && upcomingGames.length === 0 ? (
+              <div className="flex items-center justify-center py-8 text-muted-foreground">
+                <RefreshCw size={16} className="animate-spin mr-2" />
+                Carregando jogos...
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {upcomingGames.map((game) => (
+                  <div key={game.id} className="bg-card rounded-xl p-4 border border-border hover:border-primary transition-all">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[10px] font-bold text-muted-foreground uppercase flex items-center gap-1">
+                        {game.icon} {game.league}
+                      </span>
+                      <span className="text-info text-xs font-bold">{game.date}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold text-sm truncate max-w-[40%]">{game.home}</span>
+                      <span className="text-xs text-muted-foreground font-bold px-3">VS</span>
+                      <span className="font-bold text-sm truncate max-w-[40%] text-right">{game.away}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-sm">{game.home}</span>
-                    <span className="text-xs text-muted-foreground font-bold px-3">VS</span>
-                    <span className="font-bold text-sm">{game.away}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
