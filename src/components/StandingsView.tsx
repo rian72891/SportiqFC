@@ -1,20 +1,87 @@
-import { useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
-import { standingsData } from '@/data/standingsData';
+import { useState, useEffect, useCallback } from 'react';
+import { ArrowLeft, RefreshCw } from 'lucide-react';
+import { standingsData, TeamStanding } from '@/data/standingsData';
 
 interface StandingsViewProps {
   onBack: () => void;
 }
 
+interface ApiStanding {
+  team: { name: string };
+  points: number;
+  playedGames: number;
+  won: number;
+  draw: number;
+  lost: number;
+  goalsFor: number;
+  goalsAgainst: number;
+  goalDifference: number;
+  position: number;
+}
+
+const FOOTBALL_DATA_LEAGUES: Record<string, { code: string; name: string }> = {
+  brasileirao: { code: 'BSA', name: 'Brasileirão Série A 2026' },
+  premier: { code: 'PL', name: 'Premier League 2025/26' },
+  laliga: { code: 'PD', name: 'La Liga 2025/26' },
+};
+
 const StandingsView = ({ onBack }: StandingsViewProps) => {
   const [active, setActive] = useState('brasileirao');
-  const data = standingsData[active];
+  const [apiData, setApiData] = useState<Record<string, TeamStanding[]>>({});
+  const [loading, setLoading] = useState(false);
+  const [usingApi, setUsingApi] = useState(false);
+
+  const staticData = standingsData[active];
 
   const tabs = [
     { id: 'brasileirao', label: '🇧🇷 Brasileirão' },
     { id: 'premier', label: '🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League' },
     { id: 'laliga', label: '🇪🇸 La Liga' },
   ];
+
+  const fetchStandings = useCallback(async (leagueId: string) => {
+    const league = FOOTBALL_DATA_LEAGUES[leagueId];
+    if (!league) return;
+
+    setLoading(true);
+    try {
+      const res = await fetch(
+        `https://api.football-data.org/v4/competitions/${league.code}/standings`,
+        {
+          headers: { 'X-Auth-Token': '7f8b9c2e1d3a4f5e6b7c8d9e0f1a2b3c' },
+        }
+      );
+      if (res.ok) {
+        const data = await res.json();
+        const standings: TeamStanding[] = data.standings[0].table.map((row: ApiStanding) => ({
+          pos: row.position,
+          name: row.team.name,
+          pts: row.points,
+          pj: row.playedGames,
+          vit: row.won,
+          emp: row.draw,
+          der: row.lost,
+          gp: row.goalsFor,
+          gc: row.goalsAgainst,
+          sg: row.goalDifference,
+        }));
+        setApiData((prev) => ({ ...prev, [leagueId]: standings }));
+        setUsingApi(true);
+      }
+    } catch {
+      // Fallback to static data
+      setUsingApi(false);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchStandings(active);
+  }, [active, fetchStandings]);
+
+  const teams = apiData[active] || staticData?.teams || [];
+  const leagueName = staticData?.name || '';
 
   return (
     <div className="min-h-screen bg-background animate-in fade-in duration-300 pb-12">
@@ -27,6 +94,13 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
             <ArrowLeft size={18} />
           </button>
           <h1 className="text-2xl font-black">Tabelas e Classificações</h1>
+          <button
+            onClick={() => fetchStandings(active)}
+            className="ml-auto flex items-center gap-1.5 text-xs font-semibold text-primary border border-primary rounded-full px-3 py-1.5 hover:bg-primary hover:text-primary-foreground transition-all"
+          >
+            <RefreshCw size={12} className={loading ? 'animate-spin' : ''} />
+            Atualizar
+          </button>
         </div>
 
         <div className="flex gap-2 overflow-x-auto hide-scrollbar pb-4">
@@ -45,11 +119,18 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
           ))}
         </div>
 
-        {data && (
+        {teams.length > 0 && (
           <div className="bg-card rounded-2xl overflow-hidden border border-border mt-4">
             <div className="gradient-primary text-primary-foreground p-5 flex justify-between items-center">
-              <h2 className="text-xl font-extrabold">{data.name}</h2>
-              <span className="text-sm opacity-90">Temporada 2025/26</span>
+              <h2 className="text-xl font-extrabold">{leagueName}</h2>
+              <div className="flex items-center gap-2">
+                {usingApi && (
+                  <span className="text-[10px] bg-primary-foreground/20 px-2 py-0.5 rounded-full">
+                    📡 API ao vivo
+                  </span>
+                )}
+                <span className="text-sm opacity-90">Temporada 2025/26</span>
+              </div>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -68,7 +149,7 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.teams.map((team) => {
+                  {teams.map((team) => {
                     let posClass = '';
                     if (team.pos <= 4) posClass = 'bg-success/20 text-success';
                     else if (team.pos <= 6) posClass = 'bg-warning/20 text-warning';
@@ -108,6 +189,13 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
               <span><span className="text-success">●</span> Libertadores/Champions</span>
               <span><span className="text-warning">●</span> Pré-Libertadores/Europa</span>
             </div>
+          </div>
+        )}
+
+        {loading && teams.length === 0 && (
+          <div className="flex items-center justify-center py-12 text-muted-foreground">
+            <RefreshCw size={20} className="animate-spin mr-2" />
+            Carregando classificação...
           </div>
         )}
       </div>
