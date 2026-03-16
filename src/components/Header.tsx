@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Search, Bell, Menu, X, Trophy } from 'lucide-react';
+import { Search, Bell, Menu, Trophy } from 'lucide-react';
 
 interface HeaderProps {
   onMenuToggle: () => void;

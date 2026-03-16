@@ -1,4 +1,4 @@
-import { X, Home, Trophy, Star, Shield, Flame } from 'lucide-react';
+import { X, Trophy } from 'lucide-react';
 import { categories } from '@/data/newsData';
 
 interface MobileMenuProps {

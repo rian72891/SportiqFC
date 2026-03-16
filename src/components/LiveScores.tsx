@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { RefreshCw, Wifi } from 'lucide-react';
+import { RefreshCw } from 'lucide-react';
 
 interface Match {
   id: string;
