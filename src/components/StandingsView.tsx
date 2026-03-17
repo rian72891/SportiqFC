@@ -195,7 +195,8 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
             </div>
             <div className="p-3 bg-background flex gap-6 justify-center flex-wrap text-xs">
               <span><span className="text-success">●</span> Libertadores/Champions</span>
-              <span><span className="text-warning">●</span> Pré-Libertadores/Europa</span>
+              <span><span className="text-warning">●</span> Pré-Libertadores/Europa League</span>
+              <span><span className="text-destructive">●</span> Rebaixamento</span>
             </div>
           </div>
         )}
