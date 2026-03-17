@@ -25,6 +25,12 @@ const FOOTBALL_DATA_LEAGUES: Record<string, { code: string; name: string }> = {
   laliga: { code: 'PD', name: 'La Liga 2025/26' },
 };
 
+const ZONE_CONFIG: Record<string, { libertadores: number; preLib: number; rebaixamento: number }> = {
+  brasileirao: { libertadores: 4, preLib: 6, rebaixamento: 17 },
+  premier: { libertadores: 4, preLib: 6, rebaixamento: 18 },
+  laliga: { libertadores: 4, preLib: 6, rebaixamento: 18 },
+};
+
 const StandingsView = ({ onBack }: StandingsViewProps) => {
   const [active, setActive] = useState('brasileirao');
   const [apiData, setApiData] = useState<Record<string, TeamStanding[]>>({});
