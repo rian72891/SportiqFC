@@ -1,1 +1,4 @@
 project_id = "mwapxohdsiphctehurys"
+
+[functions.generate-news]
+verify_jwt = false

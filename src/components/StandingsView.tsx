@@ -25,6 +25,12 @@ const FOOTBALL_DATA_LEAGUES: Record<string, { code: string; name: string }> = {
   laliga: { code: 'PD', name: 'La Liga 2025/26' },
 };
 
+const ZONE_CONFIG: Record<string, { libertadores: number; preLib: number; rebaixamento: number }> = {
+  brasileirao: { libertadores: 4, preLib: 6, rebaixamento: 17 },
+  premier: { libertadores: 4, preLib: 6, rebaixamento: 18 },
+  laliga: { libertadores: 4, preLib: 6, rebaixamento: 18 },
+};
+
 const StandingsView = ({ onBack }: StandingsViewProps) => {
   const [active, setActive] = useState('brasileirao');
   const [apiData, setApiData] = useState<Record<string, TeamStanding[]>>({});
@@ -129,7 +135,7 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
                     📡 API ao vivo
                   </span>
                 )}
-                <span className="text-sm opacity-90">Temporada 2025/26</span>
+                <span className="text-sm opacity-90">Temporada 2026</span>
               </div>
             </div>
             <div className="overflow-x-auto">
@@ -150,9 +156,11 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
                 </thead>
                 <tbody>
                   {teams.map((team) => {
+                    const zones = ZONE_CONFIG[active] || { libertadores: 4, preLib: 6, rebaixamento: 17 };
                     let posClass = '';
-                    if (team.pos <= 4) posClass = 'bg-success/20 text-success';
-                    else if (team.pos <= 6) posClass = 'bg-warning/20 text-warning';
+                    if (team.pos <= zones.libertadores) posClass = 'bg-success/20 text-success';
+                    else if (team.pos <= zones.preLib) posClass = 'bg-warning/20 text-warning';
+                    else if (team.pos >= zones.rebaixamento) posClass = 'bg-destructive/20 text-destructive';
 
                     return (
                       <tr key={team.pos} className="border-b border-border hover:bg-background/50 transition-colors">
@@ -187,7 +195,8 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
             </div>
             <div className="p-3 bg-background flex gap-6 justify-center flex-wrap text-xs">
               <span><span className="text-success">●</span> Libertadores/Champions</span>
-              <span><span className="text-warning">●</span> Pré-Libertadores/Europa</span>
+              <span><span className="text-warning">●</span> Pré-Libertadores/Europa League</span>
+              <span><span className="text-destructive">●</span> Rebaixamento</span>
             </div>
           </div>
         )}

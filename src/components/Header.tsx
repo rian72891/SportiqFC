@@ -1,4 +1,5 @@
 import { Search, Bell, Menu, Trophy } from 'lucide-react';
+import AuthButton from './AuthButton';
 
 interface HeaderProps {
   onMenuToggle: () => void;
@@ -52,9 +53,7 @@ const Header = ({ onMenuToggle, onSearchToggle }: HeaderProps) => {
               3
             </span>
           </button>
-          <button className="hidden md:flex gradient-primary text-primary-foreground px-4 py-2 rounded-full font-bold text-sm uppercase shadow-red hover:-translate-y-0.5 transition-all items-center gap-1.5">
-            <Trophy size={14} /> Assinar
-          </button>
+          <AuthButton />
         </div>
       </div>
     </header>
