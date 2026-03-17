@@ -49,6 +49,21 @@ const REFRESH_OPTIONS = [
   { label: '5min', value: 300 },
 ];
 
+const FALLBACK_MATCHES: Match[] = [
+  // 5 Resultados
+  { id: 'f1', sport: 'Brasileirão', league: 'Brasileirão', homeTeam: 'Flamengo', awayTeam: 'Palmeiras', homeScore: 2, awayScore: 1, status: 'finished', time: 'FT', commence: '2026-03-16T20:00:00Z' },
+  { id: 'f2', sport: 'Premier League', league: 'Premier League', homeTeam: 'Liverpool', awayTeam: 'Arsenal', homeScore: 3, awayScore: 2, status: 'finished', time: 'FT', commence: '2026-03-16T17:00:00Z' },
+  { id: 'f3', sport: 'La Liga', league: 'La Liga', homeTeam: 'Real Madrid', awayTeam: 'Barcelona', homeScore: 2, awayScore: 2, status: 'finished', time: 'FT', commence: '2026-03-16T21:00:00Z' },
+  { id: 'f4', sport: 'Brasileirão', league: 'Brasileirão', homeTeam: 'Botafogo', awayTeam: 'São Paulo', homeScore: 1, awayScore: 0, status: 'finished', time: 'FT', commence: '2026-03-16T19:00:00Z' },
+  { id: 'f5', sport: 'NBA', league: 'NBA', homeTeam: 'Lakers', awayTeam: 'Celtics', homeScore: 112, awayScore: 108, status: 'finished', time: 'FT', commence: '2026-03-16T02:00:00Z' },
+  // 5 Previstos
+  { id: 'u1', sport: 'Brasileirão', league: 'Brasileirão', homeTeam: 'Corinthians', awayTeam: 'Cruzeiro', homeScore: null, awayScore: null, status: 'scheduled', time: '20:00', commence: '2026-03-18T23:00:00Z' },
+  { id: 'u2', sport: 'Champions League', league: 'Champions League', homeTeam: 'PSG', awayTeam: 'Bayern', homeScore: null, awayScore: null, status: 'scheduled', time: '16:00', commence: '2026-03-19T19:00:00Z' },
+  { id: 'u3', sport: 'Premier League', league: 'Premier League', homeTeam: 'Man City', awayTeam: 'Chelsea', homeScore: null, awayScore: null, status: 'scheduled', time: '13:30', commence: '2026-03-19T16:30:00Z' },
+  { id: 'u4', sport: 'La Liga', league: 'La Liga', homeTeam: 'Atlético Madrid', awayTeam: 'Sevilla', homeScore: null, awayScore: null, status: 'scheduled', time: '17:00', commence: '2026-03-20T20:00:00Z' },
+  { id: 'u5', sport: 'UFC', league: 'UFC', homeTeam: 'Alex Pereira', awayTeam: 'Ankalaev', homeScore: null, awayScore: null, status: 'scheduled', time: '23:00', commence: '2026-03-22T02:00:00Z' },
+];
+
 const LiveScores = () => {
   const [matches, setMatches] = useState<Match[]>([]);
   const [loading, setLoading] = useState(true);
