@@ -121,7 +121,7 @@ const LiveScores = () => {
           return new Date(a.commence).getTime() - new Date(b.commence).getTime();
         });
 
-      setMatches(allMatches);
+      setMatches(allMatches.length > 0 ? allMatches : FALLBACK_MATCHES);
       setLastUpdate(new Date());
       setCountdown(refreshInterval);
     } catch (err) {
