@@ -135,7 +135,7 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
                     📡 API ao vivo
                   </span>
                 )}
-                <span className="text-sm opacity-90">Temporada 2025/26</span>
+                <span className="text-sm opacity-90">Temporada 2026</span>
               </div>
             </div>
             <div className="overflow-x-auto">
