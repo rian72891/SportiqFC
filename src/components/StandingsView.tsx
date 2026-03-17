@@ -156,9 +156,11 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
                 </thead>
                 <tbody>
                   {teams.map((team) => {
+                    const zones = ZONE_CONFIG[active] || { libertadores: 4, preLib: 6, rebaixamento: 17 };
                     let posClass = '';
-                    if (team.pos <= 4) posClass = 'bg-success/20 text-success';
-                    else if (team.pos <= 6) posClass = 'bg-warning/20 text-warning';
+                    if (team.pos <= zones.libertadores) posClass = 'bg-success/20 text-success';
+                    else if (team.pos <= zones.preLib) posClass = 'bg-warning/20 text-warning';
+                    else if (team.pos >= zones.rebaixamento) posClass = 'bg-destructive/20 text-destructive';
 
                     return (
                       <tr key={team.pos} className="border-b border-border hover:bg-background/50 transition-colors">
