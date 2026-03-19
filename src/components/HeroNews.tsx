@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { NewsItem } from '@/data/newsData';
+import { handleImageError } from '@/lib/imageFallback';
 
 interface HeroNewsProps {
   news: NewsItem;
@@ -6,15 +8,28 @@ interface HeroNewsProps {
 }
 
 const HeroNews = ({ news, onClick }: HeroNewsProps) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <div
       className="relative rounded-2xl overflow-hidden shadow-red-lg cursor-pointer hover:-translate-y-1 transition-transform group"
       onClick={() => onClick(news.id)}
     >
+      {/* Skeleton */}
+      {!imageLoaded && (
+        <div className="w-full h-[400px] bg-muted animate-pulse" />
+      )}
       <img
         src={news.image}
         alt={news.title}
-        className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500"
+        className={`w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-500 ${
+          imageLoaded ? 'opacity-100' : 'opacity-0 absolute inset-0'
+        }`}
+        onLoad={() => setImageLoaded(true)}
+        onError={(e) => {
+          handleImageError(e, news.categorySlug);
+          setImageLoaded(true);
+        }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
