@@ -14,15 +14,7 @@ interface Match {
   time: string;
   commence: string;
 }
-
-const SPORT_NAMES: Record<string, string> = {
-  'soccer_brazil_campeonato': 'Brasileirão',
-  'soccer_uefa_champs_league': 'Champions League',
-  'soccer_epl': 'Premier League',
-  'soccer_spain_la_liga': 'La Liga',
-  'basketball_nba': 'NBA',
-  'mma_mixed_martial_arts': 'UFC',
-};
+// Sport names used by the edge function for mapping
 
 const SPORT_ICONS: Record<string, string> = {
   'Brasileirão': '🇧🇷',
