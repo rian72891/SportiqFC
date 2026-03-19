@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { NewsItem } from '@/data/newsData';
 import { Bookmark, Clock, Eye } from 'lucide-react';
+import { handleImageError } from '@/lib/imageFallback';
 
 interface NewsCardProps {
   news: NewsItem;
@@ -8,6 +10,8 @@ interface NewsCardProps {
 }
 
 const NewsCard = ({ news, onClick, featured }: NewsCardProps) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <article
       className={`bg-card rounded-xl overflow-hidden cursor-pointer transition-all border border-border hover:-translate-y-1 hover:shadow-red hover:border-primary group ${
@@ -16,11 +20,24 @@ const NewsCard = ({ news, onClick, featured }: NewsCardProps) => {
       onClick={() => onClick(news.id)}
     >
       <div className="relative overflow-hidden aspect-video">
+        {/* Skeleton placeholder */}
+        {!imageLoaded && (
+          <div className="absolute inset-0 bg-muted animate-pulse flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-muted-foreground/20" />
+          </div>
+        )}
         <img
           src={news.image}
           alt={news.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${
+            imageLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
           loading="lazy"
+          onLoad={() => setImageLoaded(true)}
+          onError={(e) => {
+            handleImageError(e, news.categorySlug);
+            setImageLoaded(true);
+          }}
         />
         <span
           className={`absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase z-10 ${

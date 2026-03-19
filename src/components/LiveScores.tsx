@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { RefreshCw, Wifi, WifiOff, ChevronLeft, ChevronRight } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 interface Match {
   id: string;
@@ -13,15 +14,6 @@ interface Match {
   time: string;
   commence: string;
 }
-
-const SPORT_KEYS = [
-  'soccer_brazil_campeonato',
-  'soccer_uefa_champs_league',
-  'soccer_epl',
-  'soccer_spain_la_liga',
-  'basketball_nba',
-  'mma_mixed_martial_arts',
-];
 
 const SPORT_NAMES: Record<string, string> = {
   'soccer_brazil_campeonato': 'Brasileirão',
@@ -41,22 +33,21 @@ const SPORT_ICONS: Record<string, string> = {
   'UFC': '🥊',
 };
 
-const API_KEY = 'f28768e29f8725ea120da36191ee08fe';
-
 const REFRESH_OPTIONS = [
   { label: '30s', value: 30 },
   { label: '1min', value: 60 },
   { label: '5min', value: 300 },
 ];
 
+const CACHE_KEY = 'sportiqfc_live_scores';
+const CACHE_EXPIRY_KEY = 'sportiqfc_live_scores_expiry';
+
 const FALLBACK_MATCHES: Match[] = [
-  // 5 Resultados
   { id: 'f1', sport: 'Brasileirão', league: 'Brasileirão', homeTeam: 'Flamengo', awayTeam: 'Palmeiras', homeScore: 2, awayScore: 1, status: 'finished', time: 'FT', commence: '2026-03-16T20:00:00Z' },
   { id: 'f2', sport: 'Premier League', league: 'Premier League', homeTeam: 'Liverpool', awayTeam: 'Arsenal', homeScore: 3, awayScore: 2, status: 'finished', time: 'FT', commence: '2026-03-16T17:00:00Z' },
   { id: 'f3', sport: 'La Liga', league: 'La Liga', homeTeam: 'Real Madrid', awayTeam: 'Barcelona', homeScore: 2, awayScore: 2, status: 'finished', time: 'FT', commence: '2026-03-16T21:00:00Z' },
   { id: 'f4', sport: 'Brasileirão', league: 'Brasileirão', homeTeam: 'Botafogo', awayTeam: 'São Paulo', homeScore: 1, awayScore: 0, status: 'finished', time: 'FT', commence: '2026-03-16T19:00:00Z' },
   { id: 'f5', sport: 'NBA', league: 'NBA', homeTeam: 'Lakers', awayTeam: 'Celtics', homeScore: 112, awayScore: 108, status: 'finished', time: 'FT', commence: '2026-03-16T02:00:00Z' },
-  // 5 Previstos
   { id: 'u1', sport: 'Brasileirão', league: 'Brasileirão', homeTeam: 'Corinthians', awayTeam: 'Cruzeiro', homeScore: null, awayScore: null, status: 'scheduled', time: '20:00', commence: '2026-03-18T23:00:00Z' },
   { id: 'u2', sport: 'Champions League', league: 'Champions League', homeTeam: 'PSG', awayTeam: 'Bayern', homeScore: null, awayScore: null, status: 'scheduled', time: '16:00', commence: '2026-03-19T19:00:00Z' },
   { id: 'u3', sport: 'Premier League', league: 'Premier League', homeTeam: 'Man City', awayTeam: 'Chelsea', homeScore: null, awayScore: null, status: 'scheduled', time: '13:30', commence: '2026-03-19T16:30:00Z' },
@@ -64,8 +55,35 @@ const FALLBACK_MATCHES: Match[] = [
   { id: 'u5', sport: 'UFC', league: 'UFC', homeTeam: 'Alex Pereira', awayTeam: 'Ankalaev', homeScore: null, awayScore: null, status: 'scheduled', time: '23:00', commence: '2026-03-22T02:00:00Z' },
 ];
 
+// Load cached data from localStorage
+const loadCachedScores = (): Match[] | null => {
+  try {
+    const expiry = localStorage.getItem(CACHE_EXPIRY_KEY);
+    if (expiry && Date.now() < parseInt(expiry)) {
+      const cached = localStorage.getItem(CACHE_KEY);
+      if (cached) return JSON.parse(cached);
+    }
+  } catch {}
+  return null;
+};
+
+const saveCachedScores = (matches: Match[]) => {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify(matches));
+    // Cache for 30 minutes
+    localStorage.setItem(CACHE_EXPIRY_KEY, String(Date.now() + 30 * 60 * 1000));
+  } catch {}
+};
+
+// Team badge URL helper using a public CDN
+const getTeamBadge = (teamName: string): string | null => {
+  // Use a free logo API
+  const encoded = encodeURIComponent(teamName);
+  return `https://www.thesportsdb.com/images/search/team/${encoded}.png`;
+};
+
 const LiveScores = () => {
-  const [matches, setMatches] = useState<Match[]>([]);
+  const [matches, setMatches] = useState<Match[]>(() => loadCachedScores() || []);
   const [loading, setLoading] = useState(true);
   const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
   const [autoRefresh, setAutoRefresh] = useState(true);
@@ -77,55 +95,30 @@ const LiveScores = () => {
   const fetchScores = useCallback(async () => {
     setLoading(true);
     try {
-      const results = await Promise.allSettled(
-        SPORT_KEYS.map(async (sport) => {
-          const res = await fetch(
-            `https://api.the-odds-api.com/v4/sports/${sport}/scores/?apiKey=${API_KEY}&daysFrom=1`
-          );
-          if (!res.ok) return [];
-          const data = await res.json();
-          return data.map((game: any) => ({
-            id: game.id,
-            sport: SPORT_NAMES[sport] || sport,
-            league: SPORT_NAMES[sport] || sport,
-            homeTeam: game.home_team,
-            awayTeam: game.away_team,
-            homeScore: game.scores?.find((s: any) => s.name === game.home_team)?.score != null
-              ? parseInt(game.scores.find((s: any) => s.name === game.home_team).score)
-              : null,
-            awayScore: game.scores?.find((s: any) => s.name === game.away_team)?.score != null
-              ? parseInt(game.scores.find((s: any) => s.name === game.away_team).score)
-              : null,
-            status: game.completed ? 'finished' : game.scores ? 'live' : 'scheduled',
-            time: game.completed
-              ? 'FT'
-              : game.scores
-              ? 'AO VIVO'
-              : new Date(game.commence_time).toLocaleTimeString('pt-BR', {
-                  hour: '2-digit',
-                  minute: '2-digit',
-                }),
-            commence: game.commence_time,
-          }));
-        })
-      );
+      const { data, error } = await supabase.functions.invoke('fetch-scores');
 
-      const allMatches = results
-        .filter((r): r is PromiseFulfilledResult<Match[]> => r.status === 'fulfilled')
-        .flatMap((r) => r.value)
-        .sort((a, b) => {
-          if (a.status === 'live' && b.status !== 'live') return -1;
-          if (a.status !== 'live' && b.status === 'live') return 1;
-          if (a.status === 'finished' && b.status === 'scheduled') return -1;
-          if (a.status === 'scheduled' && b.status === 'finished') return 1;
-          return new Date(a.commence).getTime() - new Date(b.commence).getTime();
-        });
+      if (error) throw error;
 
-      setMatches(allMatches.length > 0 ? allMatches : FALLBACK_MATCHES);
+      const fetchedMatches: Match[] = data?.matches || [];
+
+      if (fetchedMatches.length > 0) {
+        setMatches(fetchedMatches);
+        saveCachedScores(fetchedMatches);
+      } else {
+        // If API returned empty, try cache then fallback
+        const cached = loadCachedScores();
+        setMatches(cached || FALLBACK_MATCHES);
+      }
+
       setLastUpdate(new Date());
       setCountdown(refreshInterval);
     } catch (err) {
       console.error('Error fetching scores:', err);
+      // On error, use cache or fallback - never show empty
+      const cached = loadCachedScores();
+      if (!matches.length) {
+        setMatches(cached || FALLBACK_MATCHES);
+      }
     } finally {
       setLoading(false);
     }
@@ -177,7 +170,6 @@ const LiveScores = () => {
             )}
           </div>
           <div className="flex items-center gap-2">
-            {/* Auto refresh toggle */}
             <button
               onClick={() => setAutoRefresh(!autoRefresh)}
               className={`flex items-center gap-1.5 text-xs font-semibold rounded-full px-3 py-1.5 transition-all border ${
@@ -190,7 +182,6 @@ const LiveScores = () => {
               {autoRefresh ? <Wifi size={12} /> : <WifiOff size={12} />}
               {autoRefresh ? `${countdown}s` : 'Off'}
             </button>
-            {/* Refresh interval */}
             {autoRefresh && (
               <div className="flex gap-1">
                 {REFRESH_OPTIONS.map((opt) => (
@@ -211,7 +202,6 @@ const LiveScores = () => {
                 ))}
               </div>
             )}
-            {/* Manual refresh */}
             <button
               onClick={() => fetchScores()}
               className="flex items-center gap-1.5 text-xs font-semibold text-primary border border-primary rounded-full px-3 py-1.5 hover:bg-primary hover:text-primary-foreground transition-all"
@@ -254,9 +244,22 @@ const LiveScores = () => {
 
         {/* Matches scroll */}
         {loading && matches.length === 0 ? (
-          <div className="flex items-center justify-center py-8 text-muted-foreground">
-            <RefreshCw size={20} className="animate-spin mr-2" />
-            Carregando placares...
+          <div className="flex gap-3 overflow-hidden px-6">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="flex-shrink-0 rounded-xl p-3 min-w-[220px] border border-border bg-secondary animate-pulse">
+                <div className="h-3 bg-muted rounded w-20 mb-3" />
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <div className="h-3 bg-muted rounded w-24" />
+                    <div className="h-4 bg-muted rounded w-6" />
+                  </div>
+                  <div className="flex justify-between">
+                    <div className="h-3 bg-muted rounded w-20" />
+                    <div className="h-4 bg-muted rounded w-6" />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         ) : filteredMatches.length === 0 ? (
           <div className="text-center py-6 text-muted-foreground text-sm">
@@ -296,19 +299,35 @@ const LiveScores = () => {
                     )}
                   </div>
                   <div className="space-y-1.5">
-                    <div className="flex items-center justify-between">
-                      <span className={`text-xs font-bold truncate max-w-[130px] ${match.status === 'live' ? 'text-foreground' : ''}`}>
-                        {match.homeTeam}
-                      </span>
-                      <span className={`text-sm font-black ${match.status === 'live' ? 'text-primary' : 'text-foreground'}`}>
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <img
+                          src={getTeamBadge(match.homeTeam) || ''}
+                          alt=""
+                          className="w-4 h-4 object-contain flex-shrink-0"
+                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                        />
+                        <span className={`text-xs font-bold truncate ${match.status === 'live' ? 'text-foreground' : ''}`}>
+                          {match.homeTeam}
+                        </span>
+                      </div>
+                      <span className={`text-sm font-black flex-shrink-0 ${match.status === 'live' ? 'text-primary' : 'text-foreground'}`}>
                         {match.homeScore !== null ? match.homeScore : '-'}
                       </span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className={`text-xs font-bold truncate max-w-[130px] ${match.status === 'live' ? 'text-foreground' : ''}`}>
-                        {match.awayTeam}
-                      </span>
-                      <span className={`text-sm font-black ${match.status === 'live' ? 'text-primary' : 'text-foreground'}`}>
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <img
+                          src={getTeamBadge(match.awayTeam) || ''}
+                          alt=""
+                          className="w-4 h-4 object-contain flex-shrink-0"
+                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                        />
+                        <span className={`text-xs font-bold truncate ${match.status === 'live' ? 'text-foreground' : ''}`}>
+                          {match.awayTeam}
+                        </span>
+                      </div>
+                      <span className={`text-sm font-black flex-shrink-0 ${match.status === 'live' ? 'text-primary' : 'text-foreground'}`}>
                         {match.awayScore !== null ? match.awayScore : '-'}
                       </span>
                     </div>
