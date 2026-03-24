@@ -342,7 +342,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'premier',
     title: 'Arteta confirma interesse em atacante de destaque para o Arsenal',
     excerpt: 'Técnico espanhol admite busca por reforço de peso para o setor ofensivo.',
-    image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800',
+    image: 'https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 15 horas',
     readTime: '3 min',
