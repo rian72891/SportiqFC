@@ -146,7 +146,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'premier',
     title: 'Salah renova com Liverpool e se torna o maior artilheiro da história do clube',
     excerpt: 'Egípcio supera Ian Rush e entra para a história dos Reds.',
-    image: 'https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=800',
+    image: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 10 horas',
     readTime: '5 min',
