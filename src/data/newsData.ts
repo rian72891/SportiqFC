@@ -370,7 +370,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'seriea',
     title: 'Vlahovic marca dois e Juventus vence clássico italiano',
     excerpt: 'Sérvio brilha em vitória importante que mantém a Juve na briga pelo título.',
-    image: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=800',
+    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 17 horas',
     readTime: '4 min',
