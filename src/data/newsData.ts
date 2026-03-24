@@ -174,7 +174,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'laliga',
     title: 'Lamine Yamal renova com Barcelona até 2030 com cláusula bilionária',
     excerpt: 'Joia catalã assina novo contrato com cláusula de rescisão de 1 bilhão de euros.',
-    image: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=800',
+    image: 'https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 12 horas',
     readTime: '4 min',
