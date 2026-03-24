@@ -286,7 +286,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'premier',
     title: "Amorim celebra primeira vitória no Old Trafford: 'É só o começo'",
     excerpt: 'Técnico português conquista primeira vitória em casa pelo Manchester United.',
-    image: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800',
+    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 11 horas',
     readTime: '4 min',
