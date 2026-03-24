@@ -356,7 +356,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Como organização de Zubeldía explica o bom momento do São Paulo',
     excerpt: 'Equipe tricolor surge como surpresa do campeonato com tática inovadora.',
-    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800',
+    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 16 horas',
     readTime: '4 min',
