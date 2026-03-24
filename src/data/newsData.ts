@@ -314,7 +314,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Postulante ao título, Cruzeiro tenta evitar turbulência no campeonato',
     excerpt: 'Raposa busca se manter na briga pelo Brasileirão após sequência irregular.',
-    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800',
+    image: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 13 horas',
     readTime: '5 min',
