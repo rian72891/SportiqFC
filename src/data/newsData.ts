@@ -167,7 +167,7 @@ export const newsData: NewsItem[] = [
     views: '31.2k',
     exclusive: false,
     content: `<p>O Botafogo anunciou a contratação de Artur Jorge como novo técnico. O português assume o comando da equipe com a missão de manter o Fogão competitivo e brigar por títulos.</p>`
-  }
+  },
   {
     id: 'yamal',
     category: 'La Liga',
