@@ -188,7 +188,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'mls',
     title: 'Aposentadoria? Luis Suárez define o futuro na Inter Miami',
     excerpt: 'Uruguaio permanece na Inter Miami e descarta aposentadoria imediata.',
-    image: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800',
+    image: 'https://images.unsplash.com/photo-1459865264687-595d652de67e?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 13 horas',
     readTime: '3 min',
