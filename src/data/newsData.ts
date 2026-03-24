@@ -328,7 +328,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Sampaoli é demitido do Atlético-MG após início ruim de temporada',
     excerpt: 'Treinador argentino é desligado após sequência de resultados negativos.',
-    image: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800',
+    image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 14 horas',
     readTime: '3 min',
