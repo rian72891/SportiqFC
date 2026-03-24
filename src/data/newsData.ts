@@ -300,7 +300,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'champions',
     title: 'Dembélé lidera PSG ao título da Champions com hat-trick na final',
     excerpt: 'Francês brilha e conquista primeira orelhuda para o clube parisiense.',
-    image: 'https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=800',
+    image: 'https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 12 horas',
     readTime: '6 min',
