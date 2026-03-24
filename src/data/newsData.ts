@@ -272,7 +272,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Coutinho brilha e Vasco vence Flamengo em clássico dramático',
     excerpt: 'Meia decide clássico com gol nos acréscimos no Maracanã.',
-    image: 'https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=800',
+    image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 10 horas',
     readTime: '5 min',
