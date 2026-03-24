@@ -258,7 +258,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'seriea',
     title: 'Lautaro Martínez renova com Inter até 2029 e se torna capitão',
     excerpt: 'Argentino amplia vínculo e assume braçadeira de capitão na equipe italiana.',
-    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800',
+    image: 'https://images.unsplash.com/photo-1517747614396-d21a78862024?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 9 horas',
     readTime: '4 min',
