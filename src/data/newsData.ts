@@ -244,7 +244,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'ufc',
     title: 'Charles Oliveira finaliza rival e pede revanche pelo cinturão dos leves',
     excerpt: 'Do Bronx mostra que ainda é o melhor finalizador do UFC e quer nova chance.',
-    image: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800',
+    image: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 8 horas',
     readTime: '3 min',
