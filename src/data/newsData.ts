@@ -398,7 +398,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'premier',
     title: 'Newcastle garante vaga na Champions League com vitória épica',
     excerpt: 'Magpies voltam à elite europeia após temporada brilhante na Premier League.',
-    image: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800',
+    image: 'https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 19 horas',
     readTime: '5 min',
