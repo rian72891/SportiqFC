@@ -230,7 +230,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'nba',
     title: 'Celtics dominam temporada e miram bicampeonato histórico',
     excerpt: 'Boston mantém melhor campanha da NBA e Tatum é favorito ao MVP.',
-    image: 'https://images.unsplash.com/photo-1504450758481-7338bbe75005?w=800',
+    image: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 6 horas',
     readTime: '4 min',
