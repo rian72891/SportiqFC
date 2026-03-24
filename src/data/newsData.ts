@@ -132,7 +132,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Memphis Depay estreia com gol e Corinthians vence em casa',
     excerpt: 'Holandês marca na vitória sobre o Palmeiras e já conquista a torcida.',
-    image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800',
+    image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 9 horas',
     readTime: '4 min',
