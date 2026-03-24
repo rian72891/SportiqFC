@@ -426,7 +426,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'bundesliga',
     title: 'Dortmund classifica para final da Champions após vitória épica',
     excerpt: 'Aurinegros eliminam PSG e voltam à decisão da orelhuda.',
-    image: 'https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=800',
+    image: 'https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 21 horas',
     readTime: '5 min',
