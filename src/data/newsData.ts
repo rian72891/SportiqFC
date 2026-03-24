@@ -202,7 +202,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'nba',
     title: 'LeBron James quebra mais um recorde histórico na NBA aos 41 anos',
     excerpt: 'King James se torna o jogador mais velho a registrar um triple-double de 40 pontos.',
-    image: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800',
+    image: 'https://images.unsplash.com/photo-1504450758481-7338bbe75005?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 4 horas',
     readTime: '4 min',
