@@ -160,7 +160,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Botafogo anuncia Artur Jorge como novo técnico para a temporada',
     excerpt: 'Português assume o comando do Fogão com a missão de conquistar títulos.',
-    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800',
+    image: 'https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 11 horas',
     readTime: '3 min',
