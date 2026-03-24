@@ -412,7 +412,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Fortaleza bate recorde de público na Arena Castelão',
     excerpt: 'Leão do Pici lota estádio e vence clássico contra o Ceará.',
-    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800',
+    image: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 20 horas',
     readTime: '4 min',
