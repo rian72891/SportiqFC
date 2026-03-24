@@ -216,7 +216,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'ufc',
     title: 'Alex Pereira defende cinturão com nocaute brutal no UFC 310',
     excerpt: 'Poatan conecta chute rodado e finaliza desafiante no segundo round em Las Vegas.',
-    image: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800',
+    image: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 5 horas',
     readTime: '5 min',
