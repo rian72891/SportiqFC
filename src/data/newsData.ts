@@ -384,7 +384,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Red Bull Bragantino vence Palmeiras e entra no G4',
     excerpt: 'Massa Bruta surpreende campeão e assume posição de destaque no Brasileirão.',
-    image: 'https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=800',
+    image: 'https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 18 horas',
     readTime: '4 min',
