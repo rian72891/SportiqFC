@@ -440,7 +440,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'seriea',
     title: 'Rafael Leão conduz Milan à vitória no Derby della Madonnina',
     excerpt: 'Português brilha em clássico contra a Inter e mantém Milan na briga.',
-    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800',
+    image: 'https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 22 horas',
     readTime: '4 min',
