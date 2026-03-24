@@ -118,7 +118,7 @@ export const newsData: NewsItem[] = [
     categorySlug: 'laliga',
     title: 'Mbappé supera CR7 em gols na primeira temporada no Real Madrid',
     excerpt: 'Francês quebra recorde de Cristiano Ronaldo e se consagra no Santiago Bernabéu.',
-    image: 'https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=800',
+    image: 'https://images.unsplash.com/photo-1624280157150-4d1ed8632989?w=800&q=80',
     author: 'Redação SportiqFC',
     time: 'Há 8 horas',
     readTime: '4 min',
