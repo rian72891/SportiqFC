@@ -12,14 +12,14 @@ const Footer = () => {
             <span className="font-black text-lg">Sportiq<span className="text-primary">FC</span></span>
           </div>
           <p className="text-sm text-muted-foreground">
-            A maior plataforma de notícias esportivas em tempo real do Brasil.
+            The biggest real-time sports news platform in Brazil.
           </p>
         </div>
         
         {[
-          { title: 'Esportes', links: ['Futebol', 'NBA', 'UFC', 'Premier League', 'La Liga'] },
-          { title: 'Institucional', links: ['Sobre Nós', 'Contato', 'Trabalhe Conosco', 'Anuncie'] },
-          { title: 'Legal', links: ['Termos de Uso', 'Privacidade', 'Cookies'] },
+          { title: 'Sports', links: ['Football', 'NBA', 'UFC', 'Premier League', 'La Liga'] },
+          { title: 'Company', links: ['About Us', 'Contact', 'Careers', 'Advertise'] },
+          { title: 'Legal', links: ['Terms of Use', 'Privacy', 'Cookies'] },
         ].map((section) => (
           <div key={section.title}>
             <h4 className="font-extrabold mb-3">{section.title}</h4>
@@ -48,7 +48,7 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        <p className="text-xs text-muted-foreground">© 2026 SportiqFC. Todos os direitos reservados.</p>
+        <p className="text-xs text-muted-foreground">© 2026 SportiqFC. All rights reserved.</p>
       </div>
     </footer>
   );

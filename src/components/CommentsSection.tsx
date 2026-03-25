@@ -32,7 +32,6 @@ const CommentsSection = ({ articleId }: CommentsSectionProps) => {
       .order('created_at', { ascending: false });
 
     if (data) {
-      // Fetch profiles for each comment
       const userIds = [...new Set(data.map((c) => c.user_id))];
       const { data: profiles } = await supabase
         .from('profiles')
@@ -56,7 +55,7 @@ const CommentsSection = ({ articleId }: CommentsSectionProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!user) {
-      toast.error('Faça login para comentar');
+      toast.error('Log in to comment');
       return;
     }
     if (!newComment.trim()) return;
@@ -69,10 +68,10 @@ const CommentsSection = ({ articleId }: CommentsSectionProps) => {
     });
 
     if (error) {
-      toast.error('Erro ao comentar');
+      toast.error('Error posting comment');
     } else {
       setNewComment('');
-      toast.success('Comentário adicionado!');
+      toast.success('Comment added!');
       fetchComments();
     }
     setSubmitting(false);
@@ -82,7 +81,7 @@ const CommentsSection = ({ articleId }: CommentsSectionProps) => {
     const { error } = await supabase.from('comments').delete().eq('id', commentId);
     if (!error) {
       setComments((prev) => prev.filter((c) => c.id !== commentId));
-      toast.success('Comentário removido');
+      toast.success('Comment deleted');
     }
   };
 
@@ -90,10 +89,9 @@ const CommentsSection = ({ articleId }: CommentsSectionProps) => {
     <div className="mt-8 pt-6 border-t border-border">
       <h3 className="text-lg font-extrabold mb-4 flex items-center gap-2">
         <MessageCircle size={20} className="text-primary" />
-        Comentários ({comments.length})
+        Comments ({comments.length})
       </h3>
 
-      {/* Comment form */}
       <form onSubmit={handleSubmit} className="mb-6">
         <div className="flex gap-3">
           <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center text-primary-foreground shrink-0">
@@ -103,7 +101,7 @@ const CommentsSection = ({ articleId }: CommentsSectionProps) => {
             <textarea
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
-              placeholder={user ? 'Escreva seu comentário...' : 'Faça login para comentar'}
+              placeholder={user ? 'Write a comment...' : 'Log in to comment'}
               disabled={!user}
               className="w-full bg-background border-2 border-border rounded-xl p-3 text-sm text-foreground placeholder:text-muted-foreground resize-none focus:border-primary outline-none transition-colors min-h-[80px]"
               rows={3}
@@ -115,19 +113,18 @@ const CommentsSection = ({ articleId }: CommentsSectionProps) => {
                 className="gradient-primary text-primary-foreground px-5 py-2 rounded-full font-bold text-sm flex items-center gap-1.5 hover:-translate-y-0.5 shadow-red transition-all disabled:opacity-50 disabled:hover:translate-y-0"
               >
                 <Send size={14} />
-                {submitting ? 'Enviando...' : 'Comentar'}
+                {submitting ? 'Sending...' : 'Comment'}
               </button>
             </div>
           </div>
         </div>
       </form>
 
-      {/* Comments list */}
       {loading ? (
-        <p className="text-muted-foreground text-sm text-center py-4">Carregando comentários...</p>
+        <p className="text-muted-foreground text-sm text-center py-4">Loading comments...</p>
       ) : comments.length === 0 ? (
         <p className="text-muted-foreground text-sm text-center py-4">
-          Nenhum comentário ainda. Seja o primeiro!
+          No comments yet. Be the first!
         </p>
       ) : (
         <div className="space-y-4">
@@ -143,10 +140,10 @@ const CommentsSection = ({ articleId }: CommentsSectionProps) => {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="font-bold text-sm">
-                    {comment.profile?.display_name || 'Usuário'}
+                    {comment.profile?.display_name || 'User'}
                   </span>
                   <span className="text-[11px] text-muted-foreground">
-                    {new Date(comment.created_at).toLocaleDateString('pt-BR', {
+                    {new Date(comment.created_at).toLocaleDateString('en-US', {
                       day: '2-digit',
                       month: 'short',
                       hour: '2-digit',

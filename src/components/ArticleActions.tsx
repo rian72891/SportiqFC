@@ -16,14 +16,12 @@ const ArticleActions = ({ articleId }: ArticleActionsProps) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Fetch like count
     supabase
       .from('likes')
       .select('id', { count: 'exact', head: true })
       .eq('article_id', articleId)
       .then(({ count }) => setLikeCount(count || 0));
 
-    // Check user's like/bookmark status
     if (user) {
       supabase
         .from('likes')
@@ -45,7 +43,7 @@ const ArticleActions = ({ articleId }: ArticleActionsProps) => {
 
   const toggleLike = async () => {
     if (!user) {
-      toast.error('Faça login para curtir');
+      toast.error('Log in to like');
       return;
     }
     setLoading(true);
@@ -63,18 +61,18 @@ const ArticleActions = ({ articleId }: ArticleActionsProps) => {
 
   const toggleBookmark = async () => {
     if (!user) {
-      toast.error('Faça login para salvar');
+      toast.error('Log in to save');
       return;
     }
     setLoading(true);
     if (bookmarked) {
       await supabase.from('bookmarks').delete().eq('article_id', articleId).eq('user_id', user.id);
       setBookmarked(false);
-      toast.success('Removido dos salvos');
+      toast.success('Removed from saved');
     } else {
       await supabase.from('bookmarks').insert({ article_id: articleId, user_id: user.id });
       setBookmarked(true);
-      toast.success('Salvo com sucesso!');
+      toast.success('Saved successfully!');
     }
     setLoading(false);
   };
@@ -89,7 +87,7 @@ const ArticleActions = ({ articleId }: ArticleActionsProps) => {
       }
     } else {
       await navigator.clipboard.writeText(url);
-      toast.success('Link copiado!');
+      toast.success('Link copied!');
     }
   };
 
@@ -105,13 +103,13 @@ const ArticleActions = ({ articleId }: ArticleActionsProps) => {
         }`}
       >
         <Heart size={14} fill={liked ? 'currentColor' : 'none'} />
-        {likeCount > 0 ? likeCount : 'Curtir'}
+        {likeCount > 0 ? likeCount : 'Like'}
       </button>
       <button
         onClick={handleShare}
         className="px-4 py-2 rounded-full bg-background border border-border text-sm font-semibold flex items-center gap-1.5 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
       >
-        <Share2 size={14} /> Compartilhar
+        <Share2 size={14} /> Share
       </button>
       <button
         onClick={toggleBookmark}
@@ -122,7 +120,7 @@ const ArticleActions = ({ articleId }: ArticleActionsProps) => {
             : 'bg-background border-border hover:bg-primary hover:text-primary-foreground hover:border-primary'
         }`}
       >
-        <Bookmark size={14} fill={bookmarked ? 'currentColor' : 'none'} /> Salvar
+        <Bookmark size={14} fill={bookmarked ? 'currentColor' : 'none'} /> Save
       </button>
     </div>
   );

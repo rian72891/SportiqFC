@@ -20,7 +20,6 @@ const NewsCard = ({ news, onClick, featured }: NewsCardProps) => {
       onClick={() => onClick(news.id)}
     >
       <div className="relative overflow-hidden aspect-video">
-        {/* Skeleton placeholder */}
         {!imageLoaded && (
           <div className="absolute inset-0 bg-muted animate-pulse flex items-center justify-center">
             <div className="w-10 h-10 rounded-full bg-muted-foreground/20" />
@@ -46,7 +45,7 @@ const NewsCard = ({ news, onClick, featured }: NewsCardProps) => {
               : 'gradient-primary text-primary-foreground'
           }`}
         >
-          {news.exclusive ? 'EXCLUSIVO' : news.category}
+          {news.exclusive ? 'EXCLUSIVE' : news.category}
         </span>
         <button
           className="absolute top-2.5 right-2.5 w-9 h-9 rounded-full bg-black/60 flex items-center justify-center text-white hover:bg-primary transition-all z-10"

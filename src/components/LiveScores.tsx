@@ -14,7 +14,6 @@ interface Match {
   time: string;
   commence: string;
 }
-// Sport names used by the edge function for mapping
 
 const SPORT_ICONS: Record<string, string> = {
   'Brasileirão': '🇧🇷',
@@ -47,7 +46,6 @@ const FALLBACK_MATCHES: Match[] = [
   { id: 'u5', sport: 'UFC', league: 'UFC', homeTeam: 'Alex Pereira', awayTeam: 'Ankalaev', homeScore: null, awayScore: null, status: 'scheduled', time: '23:00', commence: '2026-03-22T02:00:00Z' },
 ];
 
-// Load cached data from localStorage
 const loadCachedScores = (): Match[] | null => {
   try {
     const expiry = localStorage.getItem(CACHE_EXPIRY_KEY);
@@ -62,14 +60,11 @@ const loadCachedScores = (): Match[] | null => {
 const saveCachedScores = (matches: Match[]) => {
   try {
     localStorage.setItem(CACHE_KEY, JSON.stringify(matches));
-    // Cache for 30 minutes
     localStorage.setItem(CACHE_EXPIRY_KEY, String(Date.now() + 30 * 60 * 1000));
   } catch {}
 };
 
-// Team badge URL helper using a public CDN
 const getTeamBadge = (teamName: string): string | null => {
-  // Use a free logo API
   const encoded = encodeURIComponent(teamName);
   return `https://www.thesportsdb.com/images/search/team/${encoded}.png`;
 };
@@ -88,25 +83,19 @@ const LiveScores = () => {
     setLoading(true);
     try {
       const { data, error } = await supabase.functions.invoke('fetch-scores');
-
       if (error) throw error;
-
       const fetchedMatches: Match[] = data?.matches || [];
-
       if (fetchedMatches.length > 0) {
         setMatches(fetchedMatches);
         saveCachedScores(fetchedMatches);
       } else {
-        // If API returned empty, try cache then fallback
         const cached = loadCachedScores();
         setMatches(cached || FALLBACK_MATCHES);
       }
-
       setLastUpdate(new Date());
       setCountdown(refreshInterval);
     } catch (err) {
       console.error('Error fetching scores:', err);
-      // On error, use cache or fallback - never show empty
       const cached = loadCachedScores();
       if (!matches.length) {
         setMatches(cached || FALLBACK_MATCHES);
@@ -116,9 +105,7 @@ const LiveScores = () => {
     }
   }, [refreshInterval]);
 
-  useEffect(() => {
-    fetchScores();
-  }, [fetchScores]);
+  useEffect(() => { fetchScores(); }, [fetchScores]);
 
   useEffect(() => {
     if (!autoRefresh) return;
@@ -149,15 +136,14 @@ const LiveScores = () => {
   return (
     <div className="bg-card border-b border-border">
       <div className="max-w-[1200px] mx-auto px-4 py-3">
-        {/* Header */}
         <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <span className="text-lg">⚽</span>
-            <span className="font-extrabold text-sm uppercase">Placares Ao Vivo</span>
+            <span className="font-extrabold text-sm uppercase">Live Scores</span>
             {liveCount > 0 && (
               <div className="flex items-center gap-1 bg-primary/10 text-primary px-2 py-0.5 rounded-full text-xs font-bold">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse-live" />
-                {liveCount} AO VIVO
+                {liveCount} LIVE
               </div>
             )}
           </div>
@@ -169,7 +155,7 @@ const LiveScores = () => {
                   ? 'bg-primary/10 text-primary border-primary'
                   : 'bg-card text-muted-foreground border-border'
               }`}
-              title={autoRefresh ? 'Desativar atualização automática' : 'Ativar atualização automática'}
+              title={autoRefresh ? 'Disable auto-refresh' : 'Enable auto-refresh'}
             >
               {autoRefresh ? <Wifi size={12} /> : <WifiOff size={12} />}
               {autoRefresh ? `${countdown}s` : 'Off'}
@@ -179,10 +165,7 @@ const LiveScores = () => {
                 {REFRESH_OPTIONS.map((opt) => (
                   <button
                     key={opt.value}
-                    onClick={() => {
-                      setRefreshInterval(opt.value);
-                      setCountdown(opt.value);
-                    }}
+                    onClick={() => { setRefreshInterval(opt.value); setCountdown(opt.value); }}
                     className={`text-[10px] font-bold px-2 py-1 rounded-full transition-all ${
                       refreshInterval === opt.value
                         ? 'bg-primary text-primary-foreground'
@@ -199,12 +182,11 @@ const LiveScores = () => {
               className="flex items-center gap-1.5 text-xs font-semibold text-primary border border-primary rounded-full px-3 py-1.5 hover:bg-primary hover:text-primary-foreground transition-all"
             >
               <RefreshCw size={12} className={loading ? 'animate-spin' : ''} />
-              Atualizar
+              Refresh
             </button>
           </div>
         </div>
 
-        {/* Sport filter tabs */}
         <div className="flex gap-1.5 mb-3 overflow-x-auto hide-scrollbar">
           <button
             onClick={() => setActiveFilter('all')}
@@ -214,7 +196,7 @@ const LiveScores = () => {
                 : 'bg-background text-muted-foreground hover:text-foreground'
             }`}
           >
-            Todos ({matches.length})
+            All ({matches.length})
           </button>
           {uniqueLeagues.map((league) => {
             const count = matches.filter((m) => m.league === league).length;
@@ -234,35 +216,25 @@ const LiveScores = () => {
           })}
         </div>
 
-        {/* Matches scroll */}
         {loading && matches.length === 0 ? (
           <div className="flex gap-3 overflow-hidden px-6">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="flex-shrink-0 rounded-xl p-3 min-w-[220px] border border-border bg-secondary animate-pulse">
                 <div className="h-3 bg-muted rounded w-20 mb-3" />
                 <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <div className="h-3 bg-muted rounded w-24" />
-                    <div className="h-4 bg-muted rounded w-6" />
-                  </div>
-                  <div className="flex justify-between">
-                    <div className="h-3 bg-muted rounded w-20" />
-                    <div className="h-4 bg-muted rounded w-6" />
-                  </div>
+                  <div className="flex justify-between"><div className="h-3 bg-muted rounded w-24" /><div className="h-4 bg-muted rounded w-6" /></div>
+                  <div className="flex justify-between"><div className="h-3 bg-muted rounded w-20" /><div className="h-4 bg-muted rounded w-6" /></div>
                 </div>
               </div>
             ))}
           </div>
         ) : filteredMatches.length === 0 ? (
           <div className="text-center py-6 text-muted-foreground text-sm">
-            Nenhum jogo encontrado para este filtro
+            No matches found for this filter
           </div>
         ) : (
           <div className="relative">
-            <button
-              onClick={() => scroll('left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-card/90 border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all shadow-lg"
-            >
+            <button onClick={() => scroll('left')} className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-card/90 border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all shadow-lg">
               <ChevronLeft size={16} />
             </button>
             <div ref={scrollRef} className="flex gap-3 overflow-x-auto hide-scrollbar pb-2 px-6">
@@ -282,7 +254,7 @@ const LiveScores = () => {
                     {match.status === 'live' ? (
                       <span className="bg-primary text-primary-foreground text-[10px] font-extrabold px-1.5 py-0.5 rounded animate-pulse-live flex items-center gap-1">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
-                        AO VIVO
+                        LIVE
                       </span>
                     ) : match.status === 'finished' ? (
                       <span className="text-[10px] font-bold text-muted-foreground bg-muted px-1.5 py-0.5 rounded">FT</span>
@@ -293,44 +265,23 @@ const LiveScores = () => {
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-1.5 min-w-0">
-                        <img
-                          src={getTeamBadge(match.homeTeam) || ''}
-                          alt=""
-                          className="w-4 h-4 object-contain flex-shrink-0"
-                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                        />
-                        <span className={`text-xs font-bold truncate ${match.status === 'live' ? 'text-foreground' : ''}`}>
-                          {match.homeTeam}
-                        </span>
+                        <img src={getTeamBadge(match.homeTeam) || ''} alt="" className="w-4 h-4 object-contain flex-shrink-0" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+                        <span className={`text-xs font-bold truncate ${match.status === 'live' ? 'text-foreground' : ''}`}>{match.homeTeam}</span>
                       </div>
-                      <span className={`text-sm font-black flex-shrink-0 ${match.status === 'live' ? 'text-primary' : 'text-foreground'}`}>
-                        {match.homeScore !== null ? match.homeScore : '-'}
-                      </span>
+                      <span className={`text-sm font-black flex-shrink-0 ${match.status === 'live' ? 'text-primary' : 'text-foreground'}`}>{match.homeScore !== null ? match.homeScore : '-'}</span>
                     </div>
                     <div className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-1.5 min-w-0">
-                        <img
-                          src={getTeamBadge(match.awayTeam) || ''}
-                          alt=""
-                          className="w-4 h-4 object-contain flex-shrink-0"
-                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                        />
-                        <span className={`text-xs font-bold truncate ${match.status === 'live' ? 'text-foreground' : ''}`}>
-                          {match.awayTeam}
-                        </span>
+                        <img src={getTeamBadge(match.awayTeam) || ''} alt="" className="w-4 h-4 object-contain flex-shrink-0" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+                        <span className={`text-xs font-bold truncate ${match.status === 'live' ? 'text-foreground' : ''}`}>{match.awayTeam}</span>
                       </div>
-                      <span className={`text-sm font-black flex-shrink-0 ${match.status === 'live' ? 'text-primary' : 'text-foreground'}`}>
-                        {match.awayScore !== null ? match.awayScore : '-'}
-                      </span>
+                      <span className={`text-sm font-black flex-shrink-0 ${match.status === 'live' ? 'text-primary' : 'text-foreground'}`}>{match.awayScore !== null ? match.awayScore : '-'}</span>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            <button
-              onClick={() => scroll('right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-card/90 border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all shadow-lg"
-            >
+            <button onClick={() => scroll('right')} className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-card/90 border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all shadow-lg">
               <ChevronRight size={16} />
             </button>
           </div>
@@ -339,14 +290,11 @@ const LiveScores = () => {
         {lastUpdate && (
           <div className="flex items-center justify-center gap-2 mt-2">
             <p className="text-[10px] text-muted-foreground italic">
-              Última atualização: {lastUpdate.toLocaleTimeString('pt-BR')}
+              Last updated: {lastUpdate.toLocaleTimeString('en-US')}
             </p>
             {autoRefresh && (
               <div className="w-16 h-1 bg-background rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-primary rounded-full transition-all duration-1000"
-                  style={{ width: `${(countdown / refreshInterval) * 100}%` }}
-                />
+                <div className="h-full bg-primary rounded-full transition-all duration-1000" style={{ width: `${(countdown / refreshInterval) * 100}%` }} />
               </div>
             )}
           </div>
