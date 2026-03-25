@@ -37,15 +37,15 @@ const StandingsTable = ({ teams, zoneConfig, showZones = true }: { teams: TeamSt
       <thead>
         <tr className="bg-background text-muted-foreground text-xs font-bold">
           <th className="p-3 text-center w-12">POS</th>
-          <th className="p-3 text-left">TIME</th>
+          <th className="p-3 text-left">TEAM</th>
           <th className="p-3 text-center">PTS</th>
-          <th className="p-3 text-center">PJ</th>
-          <th className="p-3 text-center hidden sm:table-cell">V</th>
-          <th className="p-3 text-center hidden sm:table-cell">E</th>
+          <th className="p-3 text-center">MP</th>
+          <th className="p-3 text-center hidden sm:table-cell">W</th>
           <th className="p-3 text-center hidden sm:table-cell">D</th>
-          <th className="p-3 text-center hidden md:table-cell">GP</th>
-          <th className="p-3 text-center hidden md:table-cell">GC</th>
-          <th className="p-3 text-center">SG</th>
+          <th className="p-3 text-center hidden sm:table-cell">L</th>
+          <th className="p-3 text-center hidden md:table-cell">GF</th>
+          <th className="p-3 text-center hidden md:table-cell">GA</th>
+          <th className="p-3 text-center">GD</th>
         </tr>
       </thead>
       <tbody>
@@ -151,16 +151,15 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
           <button onClick={onBack} className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all">
             <ArrowLeft size={18} />
           </button>
-          <h1 className="text-2xl font-black">Tabelas e Classificações</h1>
+          <h1 className="text-2xl font-black">Standings & Tables</h1>
           {!isGroupCompetition && (
             <button onClick={() => fetchStandings(active)} className="ml-auto flex items-center gap-1.5 text-xs font-semibold text-primary border border-primary rounded-full px-3 py-1.5 hover:bg-primary hover:text-primary-foreground transition-all">
               <RefreshCw size={12} className={loading ? 'animate-spin' : ''} />
-              Atualizar
+              Refresh
             </button>
           )}
         </div>
 
-        {/* Tabs */}
         <div className="flex gap-2 overflow-x-auto hide-scrollbar pb-4">
           {tabs.map((tab) => (
             <button
@@ -177,43 +176,40 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
           ))}
         </div>
 
-        {/* Champions / Libertadores - ESPN/TNT style */}
         {isGroupCompetition && (
           <div className="space-y-6 mt-4">
-            {/* Header */}
             <div className="bg-card rounded-2xl overflow-hidden border border-border">
               <div className={`p-5 flex items-center gap-3 ${active === 'champions' ? 'bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900' : 'bg-gradient-to-r from-green-900 via-green-800 to-green-900'} text-white`}>
                 <Trophy size={28} />
                 <div>
                   <h2 className="text-xl font-extrabold">{leagueName}</h2>
                   <p className="text-xs opacity-80">
-                    {active === 'champions' ? 'League Phase - Classificação Final' : 'Fase de Grupos - Classificação'}
+                    {active === 'champions' ? 'League Phase - Final Standings' : 'Group Stage - Standings'}
                   </p>
                 </div>
               </div>
             </div>
 
             {active === 'champions' ? (
-              /* Champions League - Single table with zone markers */
               <div className="bg-card rounded-2xl overflow-hidden border border-border">
                 <div className="p-4 bg-background border-b border-border flex items-center gap-2">
                   <Shield size={16} className="text-primary" />
-                  <span className="font-bold text-sm">Classificação Geral - League Phase</span>
+                  <span className="font-bold text-sm">Overall Standings - League Phase</span>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="bg-background text-muted-foreground text-xs font-bold">
                         <th className="p-3 text-center w-12">POS</th>
-                        <th className="p-3 text-left">TIME</th>
+                        <th className="p-3 text-left">TEAM</th>
                         <th className="p-3 text-center">PTS</th>
-                        <th className="p-3 text-center">PJ</th>
-                        <th className="p-3 text-center hidden sm:table-cell">V</th>
-                        <th className="p-3 text-center hidden sm:table-cell">E</th>
+                        <th className="p-3 text-center">MP</th>
+                        <th className="p-3 text-center hidden sm:table-cell">W</th>
                         <th className="p-3 text-center hidden sm:table-cell">D</th>
-                        <th className="p-3 text-center hidden md:table-cell">GP</th>
-                        <th className="p-3 text-center hidden md:table-cell">GC</th>
-                        <th className="p-3 text-center">SG</th>
+                        <th className="p-3 text-center hidden sm:table-cell">L</th>
+                        <th className="p-3 text-center hidden md:table-cell">GF</th>
+                        <th className="p-3 text-center hidden md:table-cell">GA</th>
+                        <th className="p-3 text-center">GD</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -224,7 +220,6 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
                         else if (team.pos <= 24) { posClass = 'bg-sky-500/20 text-sky-400'; }
                         else { posClass = 'bg-destructive/20 text-destructive'; }
 
-                        // Divider lines at positions 8 and 24
                         if (team.pos === 8 || team.pos === 24) borderClass = 'border-b-2 border-primary';
 
                         return (
@@ -252,13 +247,12 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
                   </table>
                 </div>
                 <div className="p-3 bg-background flex gap-6 justify-center flex-wrap text-xs">
-                  <span><span className="text-blue-400">●</span> Classificação direta (1º-8º)</span>
-                  <span><span className="text-sky-400">●</span> Playoffs (9º-24º)</span>
-                  <span><span className="text-destructive">●</span> Eliminado (25º-36º)</span>
+                  <span><span className="text-blue-400">●</span> Direct qualification (1st-8th)</span>
+                  <span><span className="text-sky-400">●</span> Playoffs (9th-24th)</span>
+                  <span><span className="text-destructive">●</span> Eliminated (25th-36th)</span>
                 </div>
               </div>
             ) : (
-              /* Libertadores - Group by group, ESPN style */
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {groups.map((group) => (
                   <div key={group.group} className="bg-card rounded-xl overflow-hidden border border-border">
@@ -271,13 +265,13 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
                         <thead>
                           <tr className="bg-background text-muted-foreground text-[10px] font-bold">
                             <th className="p-2 text-center w-8">#</th>
-                            <th className="p-2 text-left">TIME</th>
+                            <th className="p-2 text-left">TEAM</th>
                             <th className="p-2 text-center">PTS</th>
-                            <th className="p-2 text-center">PJ</th>
-                            <th className="p-2 text-center">V</th>
-                            <th className="p-2 text-center">E</th>
+                            <th className="p-2 text-center">MP</th>
+                            <th className="p-2 text-center">W</th>
                             <th className="p-2 text-center">D</th>
-                            <th className="p-2 text-center">SG</th>
+                            <th className="p-2 text-center">L</th>
+                            <th className="p-2 text-center">GD</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -312,30 +306,29 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
 
             {active === 'libertadores' && (
               <div className="p-3 bg-card rounded-xl border border-border flex gap-6 justify-center flex-wrap text-xs">
-                <span><span className="text-success">●</span> Classificado para oitavas</span>
-                <span><span className="text-muted-foreground">●</span> Eliminado</span>
+                <span><span className="text-success">●</span> Qualified for Round of 16</span>
+                <span><span className="text-muted-foreground">●</span> Eliminated</span>
               </div>
             )}
           </div>
         )}
 
-        {/* Regular league table */}
         {!isGroupCompetition && teams.length > 0 && (
           <div className="bg-card rounded-2xl overflow-hidden border border-border mt-4">
             <div className="gradient-primary text-primary-foreground p-5 flex justify-between items-center">
               <h2 className="text-xl font-extrabold">{leagueName}</h2>
               <div className="flex items-center gap-2">
                 {usingApi && (
-                  <span className="text-[10px] bg-primary-foreground/20 px-2 py-0.5 rounded-full">📡 API ao vivo</span>
+                  <span className="text-[10px] bg-primary-foreground/20 px-2 py-0.5 rounded-full">📡 Live API</span>
                 )}
-                <span className="text-sm opacity-90">Atualizado 17/03/2026</span>
+                <span className="text-sm opacity-90">Updated 03/17/2026</span>
               </div>
             </div>
             <StandingsTable teams={teams} zoneConfig={ZONE_CONFIG[active]} />
             <div className="p-3 bg-background flex gap-6 justify-center flex-wrap text-xs">
               <span><span className="text-success">●</span> Libertadores/Champions</span>
-              <span><span className="text-warning">●</span> Pré-Libertadores/Europa League</span>
-              <span><span className="text-destructive">●</span> Rebaixamento</span>
+              <span><span className="text-warning">●</span> Pre-Libertadores/Europa League</span>
+              <span><span className="text-destructive">●</span> Relegation</span>
             </div>
           </div>
         )}
@@ -343,7 +336,7 @@ const StandingsView = ({ onBack }: StandingsViewProps) => {
         {loading && teams.length === 0 && !isGroupCompetition && (
           <div className="flex items-center justify-center py-12 text-muted-foreground">
             <RefreshCw size={20} className="animate-spin mr-2" />
-            Carregando classificação...
+            Loading standings...
           </div>
         )}
       </div>

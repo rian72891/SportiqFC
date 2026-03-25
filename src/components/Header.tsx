@@ -13,12 +13,12 @@ const Header = ({ onMenuToggle, onSearchToggle }: HeaderProps) => {
       <div className="gradient-primary px-4 py-2 text-sm font-semibold flex justify-between items-center text-primary-foreground">
         <div className="flex items-center gap-2">
           <span className="bg-primary-foreground text-primary px-2 py-0.5 rounded text-xs font-extrabold uppercase animate-pulse-live">
-            AO VIVO
+            LIVE
           </span>
-          <span className="text-sm">Últimas notícias do mundo esportivo</span>
+          <span className="text-sm">Latest news from the world of sports</span>
         </div>
         <span className="hidden sm:block text-xs opacity-90">
-          {new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+          {new Date().toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
         </span>
       </div>
 

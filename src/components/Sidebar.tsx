@@ -40,27 +40,27 @@ const Sidebar = ({ onArticleClick }: SidebarProps) => {
           <Mail size={18} className="text-primary" /> Newsletter
         </h3>
         <p className="text-sm text-muted-foreground mb-3">
-          Receba as melhores notícias direto no seu e-mail!
+          Get the best news delivered straight to your inbox!
         </p>
         <div className="space-y-2">
           <input
             type="email"
-            placeholder="Seu melhor e-mail"
+            placeholder="Your best email"
             className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg text-sm text-foreground outline-none focus:border-primary transition-colors"
           />
           <button className="w-full gradient-primary text-primary-foreground py-3 rounded-lg font-bold text-sm uppercase hover:-translate-y-0.5 hover:shadow-red transition-all">
-            Inscrever-se
+            Subscribe
           </button>
         </div>
         <p className="text-[11px] text-muted-foreground text-center mt-2">
-          Sem spam. Cancele quando quiser.
+          No spam. Unsubscribe anytime.
         </p>
       </div>
 
       {/* Social */}
       <div className="bg-card rounded-xl p-5 border border-border">
         <h3 className="text-lg font-extrabold mb-4 pb-2 border-b-2 border-primary flex items-center gap-2">
-          <Share2 size={18} className="text-primary" /> Redes Sociais
+          <Share2 size={18} className="text-primary" /> Social Media
         </h3>
         <div className="grid grid-cols-2 gap-2">
           {[

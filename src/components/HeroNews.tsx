@@ -15,7 +15,6 @@ const HeroNews = ({ news, onClick }: HeroNewsProps) => {
       className="relative rounded-2xl overflow-hidden shadow-red-lg cursor-pointer hover:-translate-y-1 transition-transform group"
       onClick={() => onClick(news.id)}
     >
-      {/* Skeleton */}
       {!imageLoaded && (
         <div className="w-full h-[400px] bg-muted animate-pulse" />
       )}
@@ -34,7 +33,7 @@ const HeroNews = ({ news, onClick }: HeroNewsProps) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
         <span className="gradient-primary text-primary-foreground px-3 py-1.5 rounded-full font-extrabold text-xs uppercase inline-block mb-3 animate-pulse">
-          {news.exclusive ? '🔥 EXCLUSIVO' : news.category}
+          {news.exclusive ? '🔥 EXCLUSIVE' : news.category}
         </span>
         <h2 className="text-2xl md:text-3xl font-black leading-tight mb-3 text-white drop-shadow-lg">
           {news.title}

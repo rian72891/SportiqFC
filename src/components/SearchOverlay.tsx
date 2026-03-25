@@ -31,7 +31,7 @@ const SearchOverlay = ({ isOpen, onClose, onArticleClick }: SearchOverlayProps) 
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Buscar notícias..."
+              placeholder="Search news..."
               className="w-full pl-11 pr-4 py-4 bg-card border-2 border-border rounded-full text-foreground text-sm outline-none focus:border-primary transition-colors"
               autoFocus
             />
@@ -62,7 +62,7 @@ const SearchOverlay = ({ isOpen, onClose, onArticleClick }: SearchOverlayProps) 
         {query.length > 2 && results.length === 0 && (
           <div className="text-center py-8 text-muted-foreground">
             <p className="text-lg mb-1">😔</p>
-            <p className="text-sm">Nenhum resultado para "{query}"</p>
+            <p className="text-sm">No results for "{query}"</p>
           </div>
         )}
       </div>

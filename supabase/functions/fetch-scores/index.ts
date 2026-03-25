@@ -31,7 +31,6 @@ serve(async (req) => {
   try {
     const API_KEY = Deno.env.get("ODDS_API_KEY");
     if (!API_KEY) {
-      // Return empty so frontend uses fallback
       console.warn("ODDS_API_KEY not configured, returning empty matches");
       return new Response(JSON.stringify({ matches: [] }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -61,8 +60,8 @@ serve(async (req) => {
           time: game.completed
             ? 'FT'
             : game.scores
-              ? 'AO VIVO'
-              : new Date(game.commence_time).toLocaleTimeString('pt-BR', {
+              ? 'LIVE'
+              : new Date(game.commence_time).toLocaleTimeString('en-US', {
                   hour: '2-digit',
                   minute: '2-digit',
                 }),
@@ -89,7 +88,7 @@ serve(async (req) => {
     console.error("Error fetching scores:", error);
     const errorMessage = error instanceof Error ? error.message : "Unknown error";
     return new Response(JSON.stringify({ matches: [], error: errorMessage }), {
-      status: 200, // Return 200 so frontend gracefully falls back
+      status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   }

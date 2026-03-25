@@ -46,8 +46,8 @@ const ArticleView = ({ article, onBack }: ArticleViewProps) => {
           </div>
 
           <div className="flex gap-4 mb-6 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1"><Clock size={14} /> {article.readTime} de leitura</span>
-            <span className="flex items-center gap-1"><Eye size={14} /> {article.views} visualizações</span>
+            <span className="flex items-center gap-1"><Clock size={14} /> {article.readTime} read</span>
+            <span className="flex items-center gap-1"><Eye size={14} /> {article.views} views</span>
           </div>
 
           <div
@@ -59,7 +59,7 @@ const ArticleView = ({ article, onBack }: ArticleViewProps) => {
           />
 
           <div className="flex flex-wrap gap-2 mt-8 pt-6 border-t border-border">
-            {['Futebol', 'Esportes', article.category, 'Notícias'].map((tag) => (
+            {['Football', 'Sports', article.category, 'News'].map((tag) => (
               <span
                 key={tag}
                 className="bg-primary/10 text-primary px-3 py-1.5 rounded-full text-xs font-semibold hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer"

@@ -29,7 +29,7 @@ const CategoryNav = ({ activeCategory, onCategoryChange, onShowTables }: Categor
             onClick={onShowTables}
             className="px-4 py-2 rounded-full font-semibold text-sm transition-all border-2 text-muted-foreground border-transparent hover:text-primary hover:border-primary hover:bg-primary/10"
           >
-            📊 Tabelas
+            📊 Standings
           </button>
         </li>
       </ul>

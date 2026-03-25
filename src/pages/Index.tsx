@@ -90,7 +90,7 @@ const Index = () => {
               home: g.home_team,
               away: g.away_team,
               league: sport.name,
-              date: new Date(g.commence_time).toLocaleDateString('pt-BR', {
+              date: new Date(g.commence_time).toLocaleDateString('en-US', {
                 weekday: 'short',
                 hour: '2-digit',
                 minute: '2-digit',
@@ -167,16 +167,14 @@ const Index = () => {
 
       <main className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8 px-4 py-6">
         <div className="space-y-8">
-          {/* Hero */}
           {heroNews && <HeroNews news={heroNews} onClick={openArticle} />}
 
-          {/* News Section */}
           <div>
             <div className="flex justify-between items-center mb-5 pb-2 border-b-[3px] border-primary">
               <h2 className="text-lg font-extrabold uppercase flex items-center gap-2">
-                🔥 Últimas Notícias
+                🔥 Latest News
               </h2>
-              <span className="text-primary text-sm font-semibold">{filteredNews.length} notícias</span>
+              <span className="text-primary text-sm font-semibold">{filteredNews.length} articles</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
               {restNews.map((news, i) => (
@@ -185,24 +183,23 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Upcoming Games Section - API powered */}
           <div>
             <div className="flex justify-between items-center mb-5 pb-2 border-b-[3px] border-primary">
               <h2 className="text-lg font-extrabold uppercase flex items-center gap-2">
-                📅 Jogos da Semana
+                📅 This Week's Games
               </h2>
               <button
                 onClick={fetchUpcomingGames}
                 className="text-primary text-xs font-semibold flex items-center gap-1 hover:underline"
               >
                 <RefreshCw size={12} className={gamesLoading ? 'animate-spin' : ''} />
-                Atualizar
+                Refresh
               </button>
             </div>
             {gamesLoading && upcomingGames.length === 0 ? (
               <div className="flex items-center justify-center py-8 text-muted-foreground">
                 <RefreshCw size={16} className="animate-spin mr-2" />
-                Carregando jogos...
+                Loading games...
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -231,7 +228,6 @@ const Index = () => {
 
       <Footer />
 
-      {/* Back to top */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-6 right-6 w-12 h-12 rounded-full gradient-primary text-primary-foreground flex items-center justify-center shadow-red hover:-translate-y-1 transition-all z-40 text-lg"

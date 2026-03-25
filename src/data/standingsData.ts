@@ -94,10 +94,10 @@ export const standingsData: Record<string, { name: string; teams: TeamStanding[]
   },
 };
 
-// Champions League 2025/26 - League Phase (novo formato com 36 times, top 24 classificam)
+// Champions League 2025/26 - League Phase
 export const championsLeagueGroups: GroupStanding[] = [
   {
-    group: 'Classificação Geral',
+    group: 'Overall Standings',
     teams: [
       { pos: 1, name: 'Liverpool', pts: 21, pj: 8, vit: 7, emp: 0, der: 1, gp: 15, gc: 5, sg: 10 },
       { pos: 2, name: 'Barcelona', pts: 19, pj: 8, vit: 6, emp: 1, der: 1, gp: 26, gc: 11, sg: 15 },
@@ -139,10 +139,10 @@ export const championsLeagueGroups: GroupStanding[] = [
   },
 ];
 
-// Libertadores 2026 - Fase de Grupos
+// Libertadores 2026 - Group Stage
 export const libertadoresGroups: GroupStanding[] = [
   {
-    group: 'Grupo A',
+    group: 'Group A',
     teams: [
       { pos: 1, name: 'Palmeiras', pts: 13, pj: 6, vit: 4, emp: 1, der: 1, gp: 10, gc: 4, sg: 6 },
       { pos: 2, name: 'Bolívar', pts: 9, pj: 6, vit: 3, emp: 0, der: 3, gp: 7, gc: 8, sg: -1 },
@@ -151,7 +151,7 @@ export const libertadoresGroups: GroupStanding[] = [
     ],
   },
   {
-    group: 'Grupo B',
+    group: 'Group B',
     teams: [
       { pos: 1, name: 'Flamengo', pts: 15, pj: 6, vit: 5, emp: 0, der: 1, gp: 14, gc: 5, sg: 9 },
       { pos: 2, name: 'Peñarol', pts: 10, pj: 6, vit: 3, emp: 1, der: 2, gp: 8, gc: 7, sg: 1 },
@@ -160,7 +160,7 @@ export const libertadoresGroups: GroupStanding[] = [
     ],
   },
   {
-    group: 'Grupo C',
+    group: 'Group C',
     teams: [
       { pos: 1, name: 'River Plate', pts: 16, pj: 6, vit: 5, emp: 1, der: 0, gp: 13, gc: 3, sg: 10 },
       { pos: 2, name: 'Atlético-MG', pts: 10, pj: 6, vit: 3, emp: 1, der: 2, gp: 9, gc: 6, sg: 3 },
@@ -169,7 +169,7 @@ export const libertadoresGroups: GroupStanding[] = [
     ],
   },
   {
-    group: 'Grupo D',
+    group: 'Group D',
     teams: [
       { pos: 1, name: 'Botafogo', pts: 14, pj: 6, vit: 4, emp: 2, der: 0, gp: 11, gc: 3, sg: 8 },
       { pos: 2, name: 'Boca Juniors', pts: 10, pj: 6, vit: 3, emp: 1, der: 2, gp: 7, gc: 6, sg: 1 },
@@ -178,7 +178,7 @@ export const libertadoresGroups: GroupStanding[] = [
     ],
   },
   {
-    group: 'Grupo E',
+    group: 'Group E',
     teams: [
       { pos: 1, name: 'Fluminense', pts: 12, pj: 6, vit: 4, emp: 0, der: 2, gp: 10, gc: 6, sg: 4 },
       { pos: 2, name: 'Cerro Porteño', pts: 9, pj: 6, vit: 3, emp: 0, der: 3, gp: 7, gc: 7, sg: 0 },
@@ -187,7 +187,7 @@ export const libertadoresGroups: GroupStanding[] = [
     ],
   },
   {
-    group: 'Grupo F',
+    group: 'Group F',
     teams: [
       { pos: 1, name: 'São Paulo', pts: 13, pj: 6, vit: 4, emp: 1, der: 1, gp: 9, gc: 4, sg: 5 },
       { pos: 2, name: 'Univ. Católica', pts: 8, pj: 6, vit: 2, emp: 2, der: 2, gp: 6, gc: 6, sg: 0 },
@@ -196,7 +196,7 @@ export const libertadoresGroups: GroupStanding[] = [
     ],
   },
   {
-    group: 'Grupo G',
+    group: 'Group G',
     teams: [
       { pos: 1, name: 'Grêmio', pts: 11, pj: 6, vit: 3, emp: 2, der: 1, gp: 8, gc: 5, sg: 3 },
       { pos: 2, name: 'Estudiantes', pts: 10, pj: 6, vit: 3, emp: 1, der: 2, gp: 7, gc: 5, sg: 2 },
@@ -205,7 +205,7 @@ export const libertadoresGroups: GroupStanding[] = [
     ],
   },
   {
-    group: 'Grupo H',
+    group: 'Group H',
     teams: [
       { pos: 1, name: 'Internacional', pts: 14, pj: 6, vit: 4, emp: 2, der: 0, gp: 12, gc: 4, sg: 8 },
       { pos: 2, name: 'Olimpia', pts: 9, pj: 6, vit: 3, emp: 0, der: 3, gp: 7, gc: 8, sg: -1 },

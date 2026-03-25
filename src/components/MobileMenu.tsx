@@ -16,7 +16,6 @@ const MobileMenu = ({ isOpen, onClose, onCategoryChange, onShowTables }: MobileM
 
   return (
     <>
-      {/* Overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] transition-opacity"
@@ -24,13 +23,11 @@ const MobileMenu = ({ isOpen, onClose, onCategoryChange, onShowTables }: MobileM
         />
       )}
 
-      {/* Menu */}
       <div
         className={`fixed top-0 left-0 w-[85%] max-w-[350px] h-screen bg-card z-[70] transition-transform duration-300 overflow-y-auto shadow-2xl ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        {/* Header */}
         <div className="gradient-primary p-6 text-primary-foreground relative">
           <button
             onClick={onClose}
@@ -44,16 +41,15 @@ const MobileMenu = ({ isOpen, onClose, onCategoryChange, onShowTables }: MobileM
             </div>
             <div>
               <h3 className="font-extrabold text-lg">SportiqFC</h3>
-              <p className="text-sm opacity-90">Esportes em tempo real</p>
+              <p className="text-sm opacity-90">Real-time sports</p>
             </div>
           </div>
         </div>
 
-        {/* Navigation */}
         <nav className="p-4">
           <div className="mb-4">
             <p className="text-xs font-extrabold text-muted-foreground uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              ⚽ ESPORTES
+              ⚽ SPORTS
             </p>
             <ul className="space-y-1">
               {categories.map((cat) => (
@@ -71,21 +67,20 @@ const MobileMenu = ({ isOpen, onClose, onCategoryChange, onShowTables }: MobileM
 
           <div className="mb-4">
             <p className="text-xs font-extrabold text-muted-foreground uppercase tracking-wider mb-2">
-              📊 DADOS
+              📊 DATA
             </p>
             <button
               onClick={() => { onShowTables(); onClose(); }}
               className="w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold text-foreground hover:bg-primary/10 hover:text-primary transition-all"
             >
-              📊 Tabelas e Classificações
+              📊 Standings & Tables
             </button>
           </div>
         </nav>
 
-        {/* Footer */}
         <div className="p-4 border-t border-border mt-4">
           <p className="text-xs text-muted-foreground text-center">
-            © 2026 SportiqFC. Todos os direitos reservados.
+            © 2026 SportiqFC. All rights reserved.
           </p>
         </div>
       </div>

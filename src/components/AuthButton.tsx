@@ -37,7 +37,7 @@ const AuthButton = () => {
         <button
           onClick={signOut}
           className="w-8 h-8 rounded-lg flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all"
-          title="Sair"
+          title="Sign out"
         >
           <LogOut size={16} />
         </button>
@@ -52,7 +52,7 @@ const AuthButton = () => {
       className="flex items-center gap-1.5 gradient-primary text-primary-foreground px-3 py-2 rounded-full font-bold text-xs uppercase shadow-red hover:-translate-y-0.5 transition-all disabled:opacity-50"
     >
       <LogIn size={14} />
-      {loading ? '...' : 'Entrar'}
+      {loading ? '...' : 'Sign In'}
     </button>
   );
 };
