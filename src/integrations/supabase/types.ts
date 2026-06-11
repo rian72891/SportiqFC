@@ -83,6 +83,27 @@ export type Database = {
         }
         Relationships: []
       }
+      newsletter_subscribers: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          welcomed: boolean
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          welcomed?: boolean
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          welcomed?: boolean
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
