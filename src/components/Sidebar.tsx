@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { newsData } from '@/data/newsData';
-import { TrendingUp, Mail, Share2 } from 'lucide-react';
+import { TrendingUp, Mail, Share2, Loader2 } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from '@/hooks/use-toast';
 
 interface SidebarProps {
   onArticleClick: (id: string) => void;
@@ -7,6 +10,30 @@ interface SidebarProps {
 
 const Sidebar = ({ onArticleClick }: SidebarProps) => {
   const trending = newsData.slice(0, 5);
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async () => {
+    const trimmed = email.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(trimmed)) {
+      toast({ title: 'Invalid email', description: 'Please enter a valid email address.', variant: 'destructive' });
+      return;
+    }
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('subscribe-newsletter', { body: { email: trimmed } });
+      if (error) throw error;
+      toast({
+        title: 'Subscribed! 🎉',
+        description: data?.emailSent ? 'Check your inbox for a welcome email.' : "You're on the list. We'll be in touch soon!",
+      });
+      setEmail('');
+    } catch (e) {
+      toast({ title: 'Something went wrong', description: 'Please try again in a moment.', variant: 'destructive' });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <aside className="flex flex-col gap-6">
@@ -45,11 +72,19 @@ const Sidebar = ({ onArticleClick }: SidebarProps) => {
         <div className="space-y-2">
           <input
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && !loading && handleSubscribe()}
+            disabled={loading}
             placeholder="Your best email"
-            className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg text-sm text-foreground outline-none focus:border-primary transition-colors"
+            className="w-full px-4 py-3 bg-background border-2 border-border rounded-lg text-sm text-foreground outline-none focus:border-primary transition-colors disabled:opacity-60"
           />
-          <button className="w-full gradient-primary text-primary-foreground py-3 rounded-lg font-bold text-sm uppercase hover:-translate-y-0.5 hover:shadow-red transition-all">
-            Subscribe
+          <button
+            onClick={handleSubscribe}
+            disabled={loading}
+            className="w-full gradient-primary text-primary-foreground py-3 rounded-lg font-bold text-sm uppercase hover:-translate-y-0.5 hover:shadow-red transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+          >
+            {loading ? <><Loader2 size={14} className="animate-spin" /> Subscribing...</> : 'Subscribe'}
           </button>
         </div>
         <p className="text-[11px] text-muted-foreground text-center mt-2">
