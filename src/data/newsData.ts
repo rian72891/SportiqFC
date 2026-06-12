@@ -20,13 +20,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'olimpiadas',
     title: 'Lucas Pinheiro Braathen conquista ouro histórico para o Brasil nas Olimpíadas de Inverno',
     excerpt: 'Em feito histórico para o esporte brasileiro, Lucas Pinheiro Braathen conquistou a medalha de ouro nas Olimpíadas de Inverno.',
-    image: '/images/cimed-ad.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/2021-12-29_FIS_Alpine_Skiing_World_Cup_Bormio_2021_%28Martin_Rulsch%29_186.jpg/800px-2021-12-29_FIS_Alpine_Skiing_World_Cup_Bormio_2021_%28Martin_Rulsch%29_186.jpg',
     author: 'Redação SportiqFC',
     time: 'há 2 horas',
     readTime: '6 min',
     views: '45,2 mil',
     exclusive: true,
-    content: `<p>Em um feito histórico para o esporte brasileiro, Lucas Pinheiro Braathen conquistou a medalha de ouro nas Olimpíadas de Inverno em uma prova emocionante que será lembrada por gerações.</p><p>O atleta brasileiro-norueguês superou todos os favoritos e cruzou a linha de chegada em primeiro lugar, garantindo a primeira medalha de ouro do Brasil em Jogos Olímpicos de Inverno.</p><blockquote>"Esse momento é para todo o Brasil. Quero inspirar as futuras gerações a sonharem alto, não importa de onde venham"</blockquote><p>A conquista representa um marco histórico para o esporte brasileiro e abre portas para uma nova geração de atletas de esportes de inverno no país.</p>`
+    content: `<p>Em um feito histórico para o esporte brasileiro, Lucas Pinheiro Braathen conquistou a medalha de ouro nas Olimpíadas de Inverno em uma prova emocionante que será lembrada por gerações. O brasileiro-norueguês cruzou a linha de chegada com 0s27 de vantagem sobre o segundo colocado, em uma descida tecnicamente quase perfeita no slalom.</p><p>Filho de mãe brasileira e pai norueguês, Lucas escolheu defender o Brasil em 2023, após uma disputa pública com a Federação Norueguesa de Esqui. Desde então, vinha somando pódios na Copa do Mundo, mas o ouro olímpico coroa de forma definitiva a aposta.</p><blockquote>"Esse momento é para todo o Brasil. Quero inspirar as futuras gerações a sonharem alto, não importa de onde venham", afirmou o atleta logo após receber a medalha, embrulhado na bandeira verde-amarela.</blockquote><p>A conquista representa um marco para o esporte brasileiro: é a primeira medalha de ouro do país em Jogos Olímpicos de Inverno em toda a história. O Comitê Olímpico Brasileiro já anunciou um pacote de investimentos em esportes de neve, na esperança de que o feito de Braathen abra portas para uma nova geração de atletas.</p><p>Nas redes sociais, autoridades, atletas e a torcida brasileira celebraram a conquista. Para Lucas, a próxima parada é a Copa do Mundo de slalom, onde lidera a classificação geral da temporada.</p>`
   },
   {
     id: 'arias-palmeiras',
@@ -34,27 +34,27 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: "Arias é apresentado no Palmeiras: 'Recusei propostas da Europa'",
     excerpt: 'Meia colombiano foi apresentado na Academia de Futebol e revelou que escolheu o Verdão por convicção.',
-    image: '/images/arias-palmeiras.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Allianz_Parque_Palmeiras.jpg/800px-Allianz_Parque_Palmeiras.jpg',
     author: 'Redação SportiqFC',
     time: 'há 3 horas',
     readTime: '4 min',
     views: '38,5 mil',
     exclusive: false,
-    content: `<p>O meia colombiano Arias foi oficialmente apresentado como novo reforço do Palmeiras na Academia de Futebol. O jogador revelou que recusou propostas de clubes europeus para vestir a camisa do Verdão.</p><p>"Tinha propostas de equipes europeias, mas quando ouvi falar do interesse do Palmeiras, não pensei duas vezes. Esse é um dos maiores clubes da América do Sul", afirmou Arias.</p><blockquote>"O Palmeiras é um gigante e eu quero fazer história aqui. Vim para conquistar títulos"</blockquote>`
+    content: `<p>O meia colombiano Jhon Arias foi oficialmente apresentado como novo reforço do Palmeiras na Academia de Futebol, em coletiva acompanhada pelo presidente Leila Pereira e pela diretoria de futebol. O jogador chega por cinco temporadas após acordo de transferência avaliado em cerca de €15 milhões.</p><p>Durante a apresentação, Arias revelou que recusou propostas concretas de clubes europeus para vestir a camisa do Verdão. Segundo o atleta, o projeto esportivo apresentado por Abel Ferreira foi decisivo.</p><blockquote>"Tinha propostas de equipes europeias, mas quando ouvi falar do interesse do Palmeiras, não pensei duas vezes. Esse é um dos maiores clubes da América do Sul e estou aqui para conquistar títulos."</blockquote><p>Arias deve estrear já na próxima rodada do Brasileirão e disputará posição no setor de criação ao lado de Raphael Veiga. A torcida palmeirense reagiu com entusiasmo: o vídeo da chegada do colombiano ao CT ultrapassou 5 milhões de visualizações em poucas horas.</p>`
   },
   {
     id: 'tottenham-tecnico',
     category: 'Premier League',
     categorySlug: 'premier',
     title: 'Tottenham anuncia novo técnico para a temporada',
-    excerpt: 'Clube londrino confirmou a chegada de André Villas-Boas como novo comandante.',
-    image: '/images/braathen-gold.jpg',
+    excerpt: 'Clube londrino confirmou a chegada de um nome de peso como novo comandante.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Tottenham_Hotspur_Stadium_2019.jpg/800px-Tottenham_Hotspur_Stadium_2019.jpg',
     author: 'Redação SportiqFC',
     time: 'há 4 horas',
     readTime: '3 min',
     views: '32,1 mil',
     exclusive: false,
-    content: `<p>O Tottenham Hotspur anunciou oficialmente a contratação de um novo técnico para comandar a equipe nesta temporada. O clube londrino confirmou a chegada em coletiva de imprensa nesta manhã.</p><p>O novo treinador chega com a missão de devolver os Spurs à briga pelas primeiras posições da Premier League.</p>`
+    content: `<p>O Tottenham Hotspur anunciou oficialmente a contratação de um novo técnico para comandar a equipe nesta temporada. O clube londrino confirmou a chegada em coletiva de imprensa nesta manhã, no Tottenham Hotspur Stadium.</p><p>O treinador assinou contrato por três temporadas e chega com a missão de devolver os Spurs à briga pelas primeiras posições da Premier League e por uma vaga na Champions League, após uma temporada decepcionante.</p><p>Em sua primeira entrevista, o novo comandante destacou a qualidade do elenco e prometeu um futebol mais ofensivo: "Temos jogadores capazes de competir com qualquer clube da Europa. Meu trabalho é dar a eles a estrutura tática para mostrarem isso."</p><p>A diretoria já liberou verba para reforços e a expectativa é de uma janela movimentada em Londres.</p>`
   },
   {
     id: 'kane-500',
@@ -62,13 +62,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'bundesliga',
     title: 'Harry Kane chega a 500 gols na carreira; veja os números',
     excerpt: 'Atacante inglês alcança marca histórica em partida do Bayern de Munique.',
-    image: '/images/tottenham-tecnico.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Harry_Kane_2023.jpg/800px-Harry_Kane_2023.jpg',
     author: 'Redação SportiqFC',
     time: 'há 5 horas',
     readTime: '5 min',
     views: '56,8 mil',
     exclusive: true,
-    content: `<p>Harry Kane atingiu a impressionante marca de 500 gols oficiais na carreira durante a vitória do Bayern de Munique. O atacante inglês se torna um dos poucos jogadores da história a alcançar esse número.</p><p>Com passagens pelo Tottenham e agora pelo Bayern, Kane construiu uma carreira repleta de gols e recordes.</p><blockquote>"500 gols é um número que eu nunca imaginei alcançar quando era jovem. É o resultado de muito trabalho e dedicação"</blockquote>`
+    content: `<p>Harry Kane atingiu a impressionante marca de 500 gols oficiais na carreira durante a vitória do Bayern de Munique sobre o Stuttgart por 3 a 1, na Allianz Arena. O atacante inglês entrou para um seleto grupo de jogadores em atividade com esse número.</p><p>Foram 280 gols pelo Tottenham, 47 pela seleção inglesa, 12 em passagens por empréstimo no início da carreira e mais de 160 com a camisa do Bayern desde que chegou ao clube em 2023. A média impressiona: praticamente um gol a cada 1,3 partidas em toda a sua trajetória profissional.</p><blockquote>"500 gols é um número que eu nunca imaginei alcançar quando era jovem. É o resultado de muito trabalho, dedicação e da ajuda de todos os companheiros que joguei ao lado", declarou Kane após o jogo.</blockquote><p>O capitão da Inglaterra agora tem como próxima meta a Bola de Ouro — algo que sempre escapou por falta de títulos coletivos. Na Bundesliga, lidera com folga a artilharia da temporada e tem o Bayern muito próximo de mais um título nacional.</p>`
   },
   {
     id: 'flamengo-janela',
@@ -76,13 +76,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Flamengo resolve pendências na janela e anuncia grande reforço',
     excerpt: 'Diretoria do clube trabalha para anunciar novo jogador e fortalecer o elenco.',
-    image: '/images/kane-500.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Maracana_Stadium_in_Rio_de_Janeiro.jpg/800px-Maracana_Stadium_in_Rio_de_Janeiro.jpg',
     author: 'Redação SportiqFC',
     time: 'há 5 horas',
     readTime: '4 min',
     views: '41,2 mil',
     exclusive: true,
-    content: `<p>O Flamengo está prestes a anunciar seu mais novo reforço para a temporada. A diretoria acelerou as negociações e está próxima de fechar com um jogador de destaque.</p><p>O clube carioca busca fortalecer o elenco para as competições do segundo semestre, em especial a Copa Libertadores.</p>`
+    content: `<p>O Flamengo está prestes a anunciar seu mais novo reforço para a temporada. A diretoria acelerou as negociações nas últimas 48 horas e está com tudo encaminhado para fechar com um jogador de destaque do futebol sul-americano.</p><p>Segundo apurado pela reportagem, o departamento de futebol comandado por José Boto trabalhou nos bastidores para resolver pendências contratuais e liberar espaço na folha salarial. A operação envolveu a saída de dois atletas que não estavam nos planos.</p><p>O clube carioca busca fortalecer o elenco principalmente para a Copa Libertadores, competição que segue como prioridade absoluta da temporada. Filipe Luís terá ainda mais opções no setor ofensivo e de meio-campo.</p><p>O anúncio oficial é aguardado para os próximos dias e a Nação rubro-negra já vibra com a chegada do reforço de peso.</p>`
   },
   {
     id: 'haaland-hattrick',
@@ -90,13 +90,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'premier',
     title: 'Haaland faz hat-trick e Manchester City goleia rival',
     excerpt: 'Norueguês brilha mais uma vez e comanda goleada do City.',
-    image: '/images/flamengo-janela.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Erling_Haaland_2023_%28cropped-2%29.jpg/800px-Erling_Haaland_2023_%28cropped-2%29.jpg',
     author: 'Redação SportiqFC',
     time: 'há 6 horas',
     readTime: '3 min',
     views: '38,9 mil',
     exclusive: false,
-    content: `<p>Erling Haaland foi o protagonista de mais uma partida histórica da Premier League. O norueguês marcou três gols na goleada do Manchester City, consolidando sua posição como artilheiro da liga.</p><p>Com o hat-trick, Haaland atingiu números impressionantes na temporada e segue na briga pela Chuteira de Ouro europeia.</p>`
+    content: `<p>Erling Haaland foi o protagonista de mais uma partida histórica da Premier League. O norueguês marcou três gols na goleada do Manchester City por 5 a 1 sobre o West Ham, no Etihad Stadium, consolidando sua posição como artilheiro absoluto da liga.</p><p>Os três gols vieram em formas distintas: um de cabeça após cruzamento de De Bruyne, um de pênalti com batida no canto e o terceiro em contra-ataque fulminante puxado por Foden. Em todas as jogadas, ficou clara a evolução do norueguês no jogo associativo.</p><p>Com o hat-trick, Haaland chegou a 24 gols no campeonato e segue na briga pela Chuteira de Ouro europeia. Pep Guardiola foi sucinto na coletiva: "Quando você tem o Erling, sabe que metade do trabalho está feito antes do apito inicial".</p>`
   },
   {
     id: 'lucas-moura',
@@ -104,13 +104,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: "Lucas Moura renova com o São Paulo até 2027: 'Quero me aposentar aqui'",
     excerpt: 'Ídolo do clube estende vínculo e declara amor eterno ao tricolor.',
-    image: '/images/haaland-hattrick.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Lucas_Moura_2018.jpg/800px-Lucas_Moura_2018.jpg',
     author: 'Redação SportiqFC',
     time: 'há 7 horas',
     readTime: '4 min',
     views: '52,3 mil',
     exclusive: true,
-    content: `<p>Lucas Moura renovou seu contrato com o São Paulo FC até 2027. O ídolo do clube deixou claro que pretende encerrar a carreira no Morumbi.</p><blockquote>"Meu sonho sempre foi me aposentar no São Paulo. Esse clube me deu tudo e quero retribuir com títulos"</blockquote><p>A renovação foi celebrada pela torcida, que considera Lucas um dos maiores ídolos recentes do tricolor.</p>`
+    content: `<p>Lucas Moura renovou seu contrato com o São Paulo FC até dezembro de 2027. O ídolo do clube deixou claro, em coletiva no Morumbi, que pretende encerrar a carreira no tricolor — clube onde foi revelado e ao qual retornou após mais de uma década na Europa.</p><blockquote>"Meu sonho sempre foi me aposentar no São Paulo. Esse clube me deu tudo. Quero retribuir com títulos e ajudar a formar a próxima geração de jogadores aqui dentro."</blockquote><p>O contrato prevê redução salarial em relação ao acordo anterior, gesto valorizado pela diretoria diante do momento financeiro do clube. Lucas também participará de projetos sociais do São Paulo e do desenvolvimento da base, com presença regular em Cotia.</p><p>A renovação foi celebrada pela torcida, que considera Lucas um dos maiores ídolos recentes do tricolor. Em campo, o atacante segue como peça central no esquema de Luis Zubeldía.</p>`
   },
   {
     id: 'mbappe-cr7',
@@ -118,13 +118,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'laliga',
     title: 'Mbappé supera CR7 em gols na primeira temporada no Real Madrid',
     excerpt: 'Francês quebra recorde de Cristiano Ronaldo e se firma no Santiago Bernabéu.',
-    image: '/images/lucas-moura.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Kylian_Mbapp%C3%A9_2018.jpg/800px-Kylian_Mbapp%C3%A9_2018.jpg',
     author: 'Redação SportiqFC',
     time: 'há 8 horas',
     readTime: '4 min',
     views: '67,4 mil',
     exclusive: true,
-    content: `<p>Kylian Mbappé superou o recorde de Cristiano Ronaldo em gols na primeira temporada no Real Madrid. O francês, que chegou ao clube na última janela, já ultrapassou a marca do astro português.</p><blockquote>"Cristiano é uma lenda, mas estou aqui para escrever a minha própria história no Real Madrid"</blockquote>`
+    content: `<p>Kylian Mbappé superou o recorde de Cristiano Ronaldo em gols na primeira temporada no Real Madrid. O francês, que chegou ao clube na última janela como agente livre vindo do PSG, ultrapassou os 33 gols que CR7 havia anotado em 2009/10.</p><p>O gol histórico saiu de pênalti, em vitória sobre o Villarreal por 3 a 0 no Santiago Bernabéu. A torcida madridista aplaudiu de pé enquanto o telão exibia a estatística do recorde quebrado.</p><blockquote>"Cristiano é uma lenda, sempre foi minha referência. Mas estou aqui para escrever a minha própria história no Real Madrid", disse Mbappé.</blockquote><p>Com a adaptação rapidíssima ao centro do ataque, o francês vive sua melhor fase desde a Copa do Mundo de 2022 e desponta como favorito à Bola de Ouro ao lado de Vinícius Jr.</p>`
   },
   {
     id: 'memphis-corinthians',
@@ -132,13 +132,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Memphis Depay marca na estreia e Corinthians vence em casa',
     excerpt: 'Holandês balança as redes em vitória sobre o Palmeiras e cai nas graças da torcida.',
-    image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Arena_Corinthians_Itaquera.jpg/800px-Arena_Corinthians_Itaquera.jpg',
     author: 'Redação SportiqFC',
     time: 'há 9 horas',
     readTime: '4 min',
     views: '43,8 mil',
     exclusive: false,
-    content: `<p>Memphis Depay teve uma estreia de sonho pelo Corinthians. O holandês marcou um golaço na vitória sobre o Palmeiras e mostrou que pode ser o diferencial da equipe nesta temporada.</p><p>"A energia da torcida do Corinthians é incrível. Me sinto em casa", afirmou Memphis após a partida.</p>`
+    content: `<p>Memphis Depay teve uma estreia de sonho pelo Corinthians. O holandês marcou um golaço em cobrança de falta na vitória por 2 a 1 sobre o Palmeiras, na Neo Química Arena, e mostrou que pode ser o diferencial da equipe nesta temporada.</p><p>A torcida, que esgotou os ingressos em poucas horas após o anúncio da escalação, vibrou a cada drible e jogada do camisa 10. Depay também participou da jogada do segundo gol corintiano, com assistência de calcanhar para Yuri Alberto.</p><blockquote>"A energia da torcida do Corinthians é incrível. Me sinto em casa. Vim aqui para conquistar títulos e mostrar o meu melhor futebol", afirmou Memphis após a partida.</blockquote><p>Com a vitória no clássico, o Timão se aproxima do G-6 do Brasileirão e ganha moral para a sequência decisiva da temporada.</p>`
   },
   {
     id: 'salah-liverpool',
@@ -146,13 +146,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'premier',
     title: 'Salah renova com o Liverpool e se torna o maior artilheiro da história do clube',
     excerpt: 'Egípcio supera Ian Rush e entra para os livros de história dos Reds.',
-    image: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Mohamed_Salah_2018.jpg/800px-Mohamed_Salah_2018.jpg',
     author: 'Redação SportiqFC',
     time: 'há 10 horas',
     readTime: '5 min',
     views: '58,9 mil',
     exclusive: true,
-    content: `<p>Mohamed Salah renovou seu contrato com o Liverpool e, no mesmo dia, tornou-se o maior artilheiro da história do clube ao superar o recorde de Ian Rush.</p><blockquote>"O Liverpool é a minha casa. Eu sempre soube que iria fazer história aqui"</blockquote>`
+    content: `<p>Mohamed Salah renovou seu contrato com o Liverpool até 2027 e, no mesmo dia, tornou-se o maior artilheiro da história do clube ao superar o recorde de Ian Rush, que durou quase quatro décadas. O gol que o levou à marca de 347 saiu em Anfield, em vitória sobre o Brighton por 2 a 0.</p><p>O egípcio chegou ao Liverpool em 2017 e desde então construiu uma carreira lendária com a camisa vermelha: Premier League, Champions League, FA Cup, EFL Cup, Supercopa da UEFA e Mundial de Clubes — todos os principais troféus do clube passaram por suas mãos.</p><blockquote>"O Liverpool é a minha casa. Eu sempre soube que iria fazer história aqui. Superar o recorde de uma lenda como Ian Rush é algo que não tem preço."</blockquote><p>O técnico Arne Slot rasgou elogios ao craque: "Mo é a definição de profissionalismo. Aos 33 anos, joga com a fome de quem está começando a carreira."</p>`
   },
   {
     id: 'botafogo-artur',
@@ -160,13 +160,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Botafogo anuncia Artur Jorge como novo técnico para a temporada',
     excerpt: 'Treinador português assume o comando com a missão de conquistar títulos.',
-    image: 'https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Est%C3%A1dio_Nilton_Santos_2017.jpg/800px-Est%C3%A1dio_Nilton_Santos_2017.jpg',
     author: 'Redação SportiqFC',
     time: 'há 11 horas',
     readTime: '3 min',
     views: '31,2 mil',
     exclusive: false,
-    content: `<p>O Botafogo anunciou a contratação de Artur Jorge como novo técnico. O treinador português assume o comando com a missão de manter a equipe competitiva e brigando por títulos.</p>`
+    content: `<p>O Botafogo anunciou a contratação de Artur Jorge como novo técnico. O treinador português assume o comando com a missão de manter a equipe competitiva e brigando por títulos, após a saída do antecessor para o futebol europeu.</p><p>Artur Jorge tem contrato até dezembro de 2026 e chega acompanhado de uma comissão técnica de quatro auxiliares. O Glorioso pagou multa de €3 milhões para tirá-lo do futebol catariano.</p><p>Em sua apresentação, o português destacou: "Aceitei o desafio porque conheço a grandeza do Botafogo e o que ele representa no futebol brasileiro. Estamos aqui para vencer."</p>`
   },
   {
     id: 'yamal',
@@ -174,13 +174,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'laliga',
     title: 'Lamine Yamal renova com o Barcelona até 2030 e tem multa bilionária',
     excerpt: 'Joia catalã assina novo contrato com cláusula de rescisão de €1 bilhão.',
-    image: 'https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Lamine_Yamal_%28cropped%29.jpg/800px-Lamine_Yamal_%28cropped%29.jpg',
     author: 'Redação SportiqFC',
     time: 'há 12 horas',
     readTime: '4 min',
     views: '49,5 mil',
     exclusive: true,
-    content: `<p>O Barcelona anunciou a renovação de contrato de Lamine Yamal até 2030. O novo vínculo inclui uma cláusula de rescisão de €1 bilhão.</p><blockquote>"O Barcelona é a minha casa, é onde eu cresci e onde quero conquistar todos os títulos possíveis"</blockquote>`
+    content: `<p>O Barcelona anunciou a renovação de contrato de Lamine Yamal até junho de 2030. O novo vínculo inclui uma cláusula de rescisão de €1 bilhão, uma das maiores da história do futebol, e coloca o jovem de 18 anos no mais alto patamar salarial do clube.</p><p>Revelado em La Masia, Yamal já é considerado o herdeiro natural de Messi no Camp Nou. Na temporada passada foi peça-chave na conquista da Eurocopa pela Espanha e este ano se firmou como titular absoluto, com mais de 15 gols e 20 assistências em todas as competições.</p><blockquote>"O Barcelona é a minha casa, é onde eu cresci e onde quero conquistar todos os títulos possíveis. Renovar até 2030 é um sonho", afirmou o atacante em vídeo divulgado pelo clube.</blockquote><p>A presidência de Joan Laporta comemorou a renovação como "a contratação mais importante da década".</p>`
   },
   {
     id: 'suarez-futuro',
@@ -188,13 +188,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'mls',
     title: 'Aposentadoria? Luis Suárez decide seu futuro no Inter Miami',
     excerpt: 'Uruguaio segue no Inter Miami e descarta aposentadoria imediata.',
-    image: 'https://images.unsplash.com/photo-1459865264687-595d652de67e?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Luis_Su%C3%A1rez_2018.jpg/800px-Luis_Su%C3%A1rez_2018.jpg',
     author: 'Redação SportiqFC',
     time: 'há 13 horas',
     readTime: '3 min',
     views: '35,7 mil',
     exclusive: false,
-    content: `<p>Luis Suárez confirmou que permanecerá no Inter Miami para a próxima temporada da MLS. O uruguaio descartou a aposentadoria e afirmou que ainda tem muito a oferecer dentro de campo.</p>`
+    content: `<p>Luis Suárez confirmou que permanecerá no Inter Miami para a próxima temporada da MLS. O uruguaio descartou a aposentadoria, encerrou as especulações sobre uma volta ao Nacional do Uruguai e afirmou que ainda tem muito a oferecer dentro de campo.</p><p>"Enquanto eu sentir que posso ajudar a equipe e jogar em alto nível, vou seguir. Tenho muita vontade de conquistar a MLS Cup ao lado dos meus amigos", disse o atacante em entrevista coletiva ao lado do CEO do clube.</p><p>Suárez fechou a temporada anterior com 22 gols e formou uma das duplas mais letais da liga ao lado de Lionel Messi. O contrato foi estendido por mais uma temporada, com opção de renovação.</p>`
   },
   {
     id: 'nba-lakers',
@@ -202,13 +202,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'nba',
     title: 'LeBron James quebra mais um recorde histórico da NBA aos 41 anos',
     excerpt: 'King James se torna o jogador mais velho a registrar um triple-double com 40 pontos.',
-    image: 'https://images.unsplash.com/photo-1504450758481-7338bbe75005?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/LeBron_James_%2851959977144%29_%28cropped2%29.jpg/800px-LeBron_James_%2851959977144%29_%28cropped2%29.jpg',
     author: 'Redação SportiqFC',
     time: 'há 4 horas',
     readTime: '4 min',
     views: '87,2 mil',
     exclusive: true,
-    content: `<p>LeBron James continua desafiando o tempo. Aos 41 anos, o astro do Los Angeles Lakers registrou 42 pontos, 11 rebotes e 10 assistências na vitória por 128 a 115 sobre o Golden State Warriors.</p><blockquote>"Idade é só um número. Enquanto meu corpo permitir, vou continuar competindo no mais alto nível"</blockquote>`
+    content: `<p>LeBron James continua desafiando o tempo. Aos 41 anos, o astro do Los Angeles Lakers registrou 42 pontos, 11 rebotes e 10 assistências na vitória por 128 a 115 sobre o Golden State Warriors, tornando-se o jogador mais velho da história da NBA a registrar um triple-double com 40 pontos ou mais.</p><p>O recorde anterior pertencia a Karl Malone, com 36 anos. LeBron pulverizou a marca jogando os 38 minutos da partida com aproveitamento de 64% nos arremessos de quadra.</p><blockquote>"Idade é só um número. Enquanto meu corpo permitir e a fome continuar, vou competir no mais alto nível", declarou King James na coletiva.</blockquote><p>O técnico JJ Redick foi enfático: "É um privilégio treinar o melhor jogador da história. O que ele faz nessa idade é simplesmente irreal." Os Lakers seguem na briga por uma vaga direta aos playoffs do Oeste.</p>`
   },
   {
     id: 'ufc-main',
@@ -216,13 +216,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'ufc',
     title: 'Alex Pereira defende cinturão com nocaute brutal no UFC 310',
     excerpt: 'Poatan acerta chute giratório e finaliza desafiante no segundo round em Las Vegas.',
-    image: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Alex_Pereira_2022.jpg/800px-Alex_Pereira_2022.jpg',
     author: 'Redação SportiqFC',
     time: 'há 5 horas',
     readTime: '5 min',
     views: '76,4 mil',
     exclusive: true,
-    content: `<p>Alex "Poatan" Pereira defendeu seu cinturão dos meio-pesados do UFC com mais uma atuação dominante. O brasileiro nocauteou o desafiante no segundo round com um chute giratório devastador.</p><blockquote>"Eu treino isso todos os dias. Quando vi a brecha, não hesitei"</blockquote>`
+    content: `<p>Alex "Poatan" Pereira defendeu seu cinturão dos meio-pesados do UFC com mais uma atuação dominante no UFC 310, em Las Vegas. O brasileiro nocauteou o desafiante no segundo round com um chute giratório devastador que abalou a T-Mobile Arena.</p><p>Foi a quarta defesa de cinturão de Poatan em pouco mais de um ano, recordando um ritmo de atividade que não se via desde os tempos de Demetrious Johnson. Pereira também se mantém na briga pelo posto de "pound-for-pound" número 1 do UFC.</p><blockquote>"Eu treino esse chute todos os dias. Quando vi a brecha, não hesitei. Quero dar luta para a galera que paga o ingresso", afirmou o campeão na entrevista ao Joe Rogan.</blockquote><p>Dana White já especula sobre a próxima luta: uma possível superluta no peso-pesado contra Tom Aspinall, que voltaria a colocar o Brasil no centro do mundo do MMA.</p>`
   },
   {
     id: 'nba-celtics',
@@ -230,13 +230,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'nba',
     title: 'Celtics dominam a temporada e miram bicampeonato histórico',
     excerpt: 'Boston tem a melhor campanha da NBA e Tatum é favorito ao MVP.',
-    image: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Jayson_Tatum_%282022%29.jpg/800px-Jayson_Tatum_%282022%29.jpg',
     author: 'Redação SportiqFC',
     time: 'há 6 horas',
     readTime: '4 min',
     views: '55,1 mil',
     exclusive: false,
-    content: `<p>O Boston Celtics segue dominando a temporada 2025-26 da NBA. Com a melhor campanha da liga, Jayson Tatum desponta como principal candidato ao prêmio de MVP.</p>`
+    content: `<p>O Boston Celtics segue dominando a temporada 2025-26 da NBA. Com a melhor campanha da liga (44 vitórias e 10 derrotas até o momento), Jayson Tatum desponta como principal candidato ao prêmio de MVP, à frente de Nikola Jokic e Shai Gilgeous-Alexander.</p><p>O número 0 do Celtics tem médias impressionantes: 29,4 pontos, 8,7 rebotes e 6,3 assistências por jogo, com aproveitamento de 47% dos arremessos de quadra. Ao seu lado, Jaylen Brown também vive temporada de altíssimo nível.</p><p>Joe Mazzulla mantém o discurso pé no chão: "Estamos jogando bem, mas o que importa são os playoffs. Nosso objetivo é o título, nada menos que isso." O bicampeonato não acontece em Boston desde 1969, ano em que a era Bill Russell se encerrou com glória.</p>`
   },
   {
     id: 'ufc-charles',
@@ -244,13 +244,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'ufc',
     title: 'Charles do Bronx finaliza rival e exige revanche pelo cinturão',
     excerpt: 'Do Bronx mostra que ainda é o melhor finalizador do UFC e quer mais uma chance.',
-    image: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Charles_Oliveira_2021.jpg/800px-Charles_Oliveira_2021.jpg',
     author: 'Redação SportiqFC',
     time: 'há 8 horas',
     readTime: '3 min',
     views: '42,8 mil',
     exclusive: false,
-    content: `<p>Charles "Do Bronx" Oliveira finalizou seu adversário no primeiro round com um mata-leão perfeito. Após a vitória, o brasileiro pediu mais uma oportunidade pelo cinturão dos leves.</p><blockquote>"Eu sou o rei dos leves. Ninguém tem mais finalizações do que eu nesse esporte"</blockquote>`
+    content: `<p>Charles "Do Bronx" Oliveira finalizou seu adversário no primeiro round com um mata-leão perfeito, em luta principal do UFC Fight Night. Após a vitória, o brasileiro pediu mais uma oportunidade pelo cinturão dos leves, hoje nas mãos de Islam Makhachev.</p><blockquote>"Eu sou o rei dos leves. Ninguém tem mais finalizações do que eu nesse esporte. Mereço a revanche", afirmou Charles no microfone, ainda em cima do octógono.</blockquote><p>Com a vitória, Do Bronx chegou a 17 finalizações no UFC, recorde absoluto. Dana White declarou que avaliará o cenário, mas que Charles "está muito perto" de garantir nova oportunidade pelo cinturão.</p>`
   },
   {
     id: 'lautaro',
@@ -258,13 +258,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'seriea',
     title: 'Lautaro Martínez renova com a Inter até 2029 e vira capitão',
     excerpt: 'Argentino estende vínculo e assume a braçadeira no clube italiano.',
-    image: 'https://images.unsplash.com/photo-1517747614396-d21a78862024?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Lautaro_Mart%C3%ADnez_2019.jpg/800px-Lautaro_Mart%C3%ADnez_2019.jpg',
     author: 'Redação SportiqFC',
     time: 'há 9 horas',
     readTime: '4 min',
     views: '38,9 mil',
     exclusive: false,
-    content: `<p>Lautaro Martínez renovou seu contrato com a Inter de Milão até 2029 e foi oficialmente anunciado como capitão definitivo da equipe.</p>`
+    content: `<p>Lautaro Martínez renovou seu contrato com a Inter de Milão até junho de 2029 e foi oficialmente anunciado como capitão definitivo da equipe, em sucessão a Hakan Çalhanoğlu. O argentino assume a braçadeira aos 28 anos, no auge da carreira.</p><p>"Sou o Toro da Inter. Esse clube é parte de mim", disse Lautaro emocionado durante a apresentação da nova braçadeira em Appiano Gentile. O novo contrato eleva o salário do atacante para €9 milhões por temporada, tornando-o o jogador mais bem pago da história do clube.</p><p>Líder técnico e moral do elenco, Lautaro tenta agora levar a Inter de volta ao topo da Serie A e a uma campanha competitiva na Champions League.</p>`
   },
   {
     id: 'vasco',
@@ -272,13 +272,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Coutinho brilha e Vasco vence o Flamengo em clássico dramático',
     excerpt: 'Meia decide o clássico com gol nos acréscimos no Maracanã.',
-    image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Coutinho_2017.jpg/800px-Coutinho_2017.jpg',
     author: 'Redação SportiqFC',
     time: 'há 10 horas',
     readTime: '5 min',
     views: '44,2 mil',
     exclusive: true,
-    content: `<p>Philippe Coutinho foi o herói do Vasco na vitória por 2 a 1 sobre o Flamengo no Maracanã. O meia marcou o gol da vitória aos 47 minutos do segundo tempo.</p>`
+    content: `<p>Philippe Coutinho foi o herói do Vasco na vitória por 2 a 1 sobre o Flamengo no Maracanã. O meia marcou o gol da vitória aos 47 minutos do segundo tempo, em cobrança de falta no ângulo direito de Rossi, e calou a Nação rubro-negra.</p><p>O Magic chegou ao Vasco com a missão de retomar a melhor forma e tem entregue mais do que se esperava. Esta foi a sua terceira partida decisiva em sequência pelo cruzmaltino, que sai do clássico com moral renovada na briga contra o rebaixamento.</p><blockquote>"Voltei para casa para viver momentos assim. Decidir clássico no Maracanã com a camisa do Vasco é indescritível", afirmou Coutinho.</blockquote><p>O técnico Fabio Carille destacou a entrega do grupo e dedicou a vitória à torcida vascaína, que esgotou os ingressos disponíveis para o jogo.</p>`
   },
   {
     id: 'amorim-united',
@@ -286,13 +286,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'premier',
     title: "Amorim comemora primeira vitória em Old Trafford: 'É só o começo'",
     excerpt: 'Técnico português conquista a primeira vitória em casa pelo Manchester United.',
-    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Old_Trafford_inside_20060726_1.jpg/800px-Old_Trafford_inside_20060726_1.jpg',
     author: 'Redação SportiqFC',
     time: 'há 11 horas',
     readTime: '4 min',
     views: '36,8 mil',
     exclusive: false,
-    content: `<p>Ruben Amorim conquistou sua primeira vitória em Old Trafford como técnico do Manchester United. O português comemorou o resultado e prometeu evolução contínua.</p><blockquote>"Isso é só o começo. O Manchester United é um clube gigante e vamos devolvê-lo ao lugar que merece"</blockquote>`
+    content: `<p>Ruben Amorim conquistou sua primeira vitória em Old Trafford como técnico do Manchester United, em jogo válido pela Premier League. O Red Devils derrotou o Everton por 3 a 0 com gols de Bruno Fernandes (2) e Garnacho.</p><p>O português, que assumiu o clube em meio à crise de resultados, vinha sofrendo pressão da imprensa inglesa. A vitória em casa traz alívio e permite trabalhar com mais tranquilidade na transição para o esquema 3-4-3 que marcou seu trabalho no Sporting.</p><blockquote>"Isso é só o começo. O Manchester United é um clube gigante e vamos devolvê-lo ao lugar que merece. Hoje os jogadores entenderam a ideia."</blockquote><p>Bruno Fernandes, capitão e autor de dois gols, declarou que o vestiário está totalmente alinhado com o trabalho do treinador português.</p>`
   },
   {
     id: 'psg',
@@ -300,13 +300,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'champions',
     title: 'Dembélé comanda PSG ao título da Champions com hat-trick na final',
     excerpt: 'Francês brilha e entrega o primeiro troféu da Champions ao clube parisiense.',
-    image: 'https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Ousmane_Demb%C3%A9l%C3%A9_2018.jpg/800px-Ousmane_Demb%C3%A9l%C3%A9_2018.jpg',
     author: 'Redação SportiqFC',
     time: 'há 12 horas',
     readTime: '6 min',
     views: '72,1 mil',
     exclusive: true,
-    content: `<p>Ousmane Dembélé fez uma atuação histórica na final da Champions League. O francês marcou três gols na vitória do PSG por 4 a 2 sobre o Real Madrid, garantindo o primeiro título europeu do clube parisiense.</p>`
+    content: `<p>Ousmane Dembélé fez uma atuação histórica na final da Champions League. O francês marcou três gols na vitória do PSG por 4 a 2 sobre o Real Madrid, em Wembley, garantindo o primeiro título europeu do clube parisiense.</p><p>A final começou eletrizante: aos 8 minutos, Dembélé abriu o placar em contra-ataque puxado por Vitinha. O Real reagiu com Vinícius Jr., mas o francês desequilibrou novamente no segundo tempo, marcando dois gols em sete minutos.</p><blockquote>"Esse é o título mais importante da minha vida. Sofri muito para chegar até aqui e finalmente o sonho se realizou", disse Dembélé chorando no gramado.</blockquote><p>Luis Enrique, técnico do PSG, dedicou a conquista aos torcedores: "Esperaram décadas por isso. Hoje a história do clube mudou para sempre." O presidente Nasser Al-Khelaifi prometeu manter a base do elenco para defender o título na próxima temporada.</p>`
   },
   {
     id: 'cruzeiro-titulo',
@@ -314,13 +314,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Cruzeiro, candidato ao título, tenta evitar turbulência no Brasileirão',
     excerpt: 'Raposa busca se manter na briga pelo título após oscilação de desempenho.',
-    image: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mineir%C3%A3o_2014.jpg/800px-Mineir%C3%A3o_2014.jpg',
     author: 'Redação SportiqFC',
     time: 'há 13 horas',
     readTime: '5 min',
     views: '29,4 mil',
     exclusive: false,
-    content: `<p>O Cruzeiro vive um momento delicado no Brasileirão. Apesar de ser candidato ao título, o clube precisa reencontrar o melhor futebol para se manter na briga pela liderança.</p>`
+    content: `<p>O Cruzeiro vive um momento delicado no Brasileirão. Apesar de ser candidato ao título, o clube celeste perdeu três das últimas cinco partidas e precisa reencontrar o melhor futebol para se manter na briga pela liderança.</p><p>O técnico Leonardo Jardim reconheceu a fase complicada e prometeu mudanças táticas para a próxima rodada. A diretoria estuda reforços pontuais para o ataque e o meio-campo.</p><p>Apesar da queda de rendimento, a Raposa ainda figura no G-4 e tem nove rodadas para corrigir a rota. A próxima partida será contra o líder Botafogo, no Mineirão, em jogo que promete definir os rumos da temporada celeste.</p>`
   },
   {
     id: 'sampaoli-demitido',
@@ -328,13 +328,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Sampaoli é demitido do Atlético-MG após início ruim de temporada',
     excerpt: 'Treinador argentino é desligado após sequência de resultados negativos.',
-    image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Arena_MRV_2023.jpg/800px-Arena_MRV_2023.jpg',
     author: 'Redação SportiqFC',
     time: 'há 14 horas',
     readTime: '3 min',
     views: '33,7 mil',
     exclusive: false,
-    content: `<p>O Atlético-MG anunciou a demissão de Jorge Sampaoli após o início ruim de temporada. O técnico argentino não resistiu à sequência de maus resultados.</p>`
+    content: `<p>O Atlético-MG anunciou a demissão de Jorge Sampaoli após o início ruim de temporada. O técnico argentino não resistiu à sequência de cinco partidas sem vitória e ao desentendimento público com parte do elenco.</p><p>A diretoria do Galo busca rapidamente um substituto. Os nomes mais cotados são Cuca, Renato Gaúcho e o português Vítor Pereira, que já trabalhou no Corinthians.</p><p>Sampaoli deixa o clube com aproveitamento de 38% em pouco mais de três meses no cargo. Em nota oficial, o Atlético agradeceu pelos serviços prestados e desejou sucesso na sequência da carreira do treinador.</p>`
   },
   {
     id: 'arteta-atacante',
@@ -342,13 +342,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'premier',
     title: 'Arteta confirma interesse em grande atacante para o Arsenal',
     excerpt: 'Técnico espanhol admite a busca por um reforço de peso para o setor ofensivo.',
-    image: 'https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Emirates_Stadium_-_East_side_-_Nov_2006.jpg/800px-Emirates_Stadium_-_East_side_-_Nov_2006.jpg',
     author: 'Redação SportiqFC',
     time: 'há 15 horas',
     readTime: '3 min',
     views: '28,9 mil',
     exclusive: false,
-    content: `<p>Mikel Arteta confirmou que o Arsenal está no mercado em busca de um atacante de elite. O técnico espanhol admitiu que a equipe precisa de um centroavante de referência.</p>`
+    content: `<p>Mikel Arteta confirmou que o Arsenal está no mercado em busca de um atacante de elite. Em coletiva no London Colney, o técnico espanhol admitiu que a equipe precisa de um centroavante de referência para brigar pelos títulos da temporada.</p><p>"Sabemos onde podemos melhorar. A diretoria está trabalhando e confio plenamente no Edu e no Andrea Berta", disse Arteta. Os nomes ligados ao clube incluem Alexander Isak, Viktor Gyökeres e Benjamin Šeško.</p><p>O Arsenal já investiu pesado em reforços nas últimas janelas, mas a ausência de um '9' de classe mundial é vista como o último degrau para a equipe finalmente sair da fila e conquistar a Premier League.</p>`
   },
   {
     id: 'zubeldia-saopaulo',
@@ -356,13 +356,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: "Como a organização de Zubeldía explica a grande fase do São Paulo",
     excerpt: 'Clube se firma como surpresa no Brasileirão com táticas inovadoras.',
-    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Morumbi_2017.jpg/800px-Morumbi_2017.jpg',
     author: 'Redação SportiqFC',
     time: 'há 16 horas',
     readTime: '4 min',
     views: '26,5 mil',
     exclusive: false,
-    content: `<p>O trabalho de Zubeldía no São Paulo tem chamado atenção. A organização tática da equipe é apontada como o principal fator por trás da boa fase no Brasileirão.</p>`
+    content: `<p>O trabalho de Luis Zubeldía no São Paulo tem chamado atenção do meio do futebol brasileiro. A organização tática da equipe, com pressão alta coordenada e transição rápida, é apontada como o principal fator por trás da boa fase no Brasileirão.</p><p>Os números reforçam a percepção: o tricolor é a equipe que mais recupera bolas no campo de ataque na competição e a segunda com maior posse de bola média. Lucas Moura e Luciano formam uma dupla criativa, enquanto Calleri encerra as jogadas com eficiência.</p><p>Zubeldía, discreto, dá poucas entrevistas, mas seu trabalho fala por si: o São Paulo briga por uma vaga direta na Libertadores e ainda está vivo na Copa do Brasil.</p>`
   },
   {
     id: 'vlahovic-juve',
@@ -370,13 +370,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'seriea',
     title: 'Vlahovic faz dois e Juventus vence o derby italiano',
     excerpt: 'Sérvio brilha em vitória importante que mantém a Juve na briga pelo título.',
-    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Dusan_Vlahovic_2022.jpg/800px-Dusan_Vlahovic_2022.jpg',
     author: 'Redação SportiqFC',
     time: 'há 17 horas',
     readTime: '4 min',
     views: '31,8 mil',
     exclusive: false,
-    content: `<p>Dusan Vlahovic foi o destaque da vitória da Juventus no derby. O sérvio marcou dois gols e manteve a Vecchia Signora na briga pelo Scudetto.</p>`
+    content: `<p>Dusan Vlahovic foi o destaque da vitória da Juventus por 3 a 1 no Derby d'Italia contra a Inter. O sérvio marcou dois gols, um deles em cobrança de falta de longa distância, e manteve a Vecchia Signora na briga pelo Scudetto.</p><p>O atacante vem respondendo bem à pressão dos torcedores e da imprensa, que questionavam sua eficiência. Na temporada, já são 14 gols em 19 partidas — sua melhor média desde a chegada a Turim.</p><p>Thiago Motta elogiou o camisa 9 na coletiva: "Dusan é fundamental para nós. Quando ele joga assim, ganhamos uma dimensão diferente." A Juve segue a três pontos do líder Napoli, com confronto direto marcado para o próximo mês.</p>`
   },
   {
     id: 'bragantino-palmeiras',
@@ -384,13 +384,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Red Bull Bragantino vence o Palmeiras e entra no G-4',
     excerpt: 'Massa Bruta surpreende o campeão e sobe para as primeiras posições do Brasileirão.',
-    image: 'https://images.unsplash.com/photo-1518604666860-9ed391f76460?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Est%C3%A1dio_Nabi_Abi_Chedid_-_Bragan%C3%A7a_Paulista_-_SP.jpg/800px-Est%C3%A1dio_Nabi_Abi_Chedid_-_Bragan%C3%A7a_Paulista_-_SP.jpg',
     author: 'Redação SportiqFC',
     time: 'há 18 horas',
     readTime: '4 min',
     views: '24,3 mil',
     exclusive: false,
-    content: `<p>O Red Bull Bragantino surpreendeu ao vencer o Palmeiras fora de casa e entrou no G-4 do Brasileirão. A equipe vem mostrando um futebol consistente.</p>`
+    content: `<p>O Red Bull Bragantino surpreendeu ao vencer o Palmeiras por 2 a 0 fora de casa e entrou no G-4 do Brasileirão. A equipe paulista vem mostrando um futebol consistente e se consolida como uma das principais surpresas da temporada.</p><p>O técnico Pedro Caixinha destacou o crescimento tático do grupo: "Trabalhamos muito a marcação posicional. Quando você é organizado, pode bater qualquer um." A vitória sobre o atual campeão dá moral para a sequência decisiva.</p><p>Com a vitória, o Bragantino aproveita o tropeço do São Paulo e assume o quarto lugar, garantindo provisoriamente vaga na pré-Libertadores de 2027.</p>`
   },
   {
     id: 'newcastle-champions',
@@ -398,13 +398,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'premier',
     title: 'Newcastle garante vaga na Champions League com vitória épica',
     excerpt: 'Magpies retornam à elite europeia após brilhante temporada na Premier League.',
-    image: 'https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/St_James%27_Park%2C_Newcastle_upon_Tyne_2.jpg/800px-St_James%27_Park%2C_Newcastle_upon_Tyne_2.jpg',
     author: 'Redação SportiqFC',
     time: 'há 19 horas',
     readTime: '5 min',
     views: '39,7 mil',
     exclusive: true,
-    content: `<p>O Newcastle garantiu sua vaga na próxima Champions League. Os Magpies confirmaram a classificação com uma vitória convincente e celebraram com a torcida no St. James' Park.</p>`
+    content: `<p>O Newcastle garantiu sua vaga na próxima Champions League ao vencer o Chelsea por 2 a 1 em Stamford Bridge. Os Magpies confirmaram a classificação com uma vitória convincente e celebraram com a torcida no St. James' Park, que assistiu ao jogo pelos telões.</p><p>Foi um trabalho construído ao longo de toda a temporada por Eddie Howe. Com investimento consistente do PIF (Public Investment Fund) saudita e gestão técnica equilibrada, o clube voltou a brigar entre os grandes da Inglaterra.</p><p>Alexander Isak marcou os dois gols da vitória e fechou a temporada como artilheiro do clube. "Esse é só o começo. Queremos brigar pelo título da Premier League", afirmou o sueco.</p>`
   },
   {
     id: 'fortaleza-recorde',
@@ -412,13 +412,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Fortaleza bate recorde de público na Arena Castelão',
     excerpt: 'Leão do Pici lota o estádio e vence o clássico contra o Ceará.',
-    image: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Arena_Castel%C3%A3o_em_dia_de_jogo.jpg/800px-Arena_Castel%C3%A3o_em_dia_de_jogo.jpg',
     author: 'Redação SportiqFC',
     time: 'há 20 horas',
     readTime: '4 min',
     views: '25,9 mil',
     exclusive: false,
-    content: `<p>O Fortaleza bateu o recorde de público na Arena Castelão em uma noite histórica. O Leão do Pici lotou o estádio e venceu o clássico contra o Ceará com grande apoio da torcida.</p>`
+    content: `<p>O Fortaleza bateu o recorde de público na Arena Castelão em uma noite histórica. Foram 63.482 torcedores presentes no Clássico-Rei contra o Ceará, superando a marca anterior do clube. O Leão do Pici venceu por 3 a 1 com gols de Moisés (2) e Lucero.</p><p>A festa começou horas antes da bola rolar, com mosaico tricolor 3D nas arquibancadas e festival de fogos no entorno do estádio. A renda também foi recorde: R$ 4,2 milhões.</p><p>O presidente Marcelo Paz comemorou: "O Fortaleza vive a melhor fase da história e isso se reflete na resposta da torcida. Vamos continuar trabalhando para entregar títulos."</p>`
   },
   {
     id: 'dortmund-final',
@@ -426,13 +426,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'bundesliga',
     title: 'Dortmund chega à final da Champions League após vitória épica',
     excerpt: 'BVB elimina o PSG e volta a decidir a principal competição europeia.',
-    image: 'https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Signal_Iduna_Park_Dortmund_2014.jpg/800px-Signal_Iduna_Park_Dortmund_2014.jpg',
     author: 'Redação SportiqFC',
     time: 'há 21 horas',
     readTime: '5 min',
     views: '45,2 mil',
     exclusive: true,
-    content: `<p>O Borussia Dortmund está na final da Champions League! Em uma noite épica no Signal Iduna Park, o BVB eliminou o PSG e garantiu sua vaga na grande decisão.</p>`
+    content: `<p>O Borussia Dortmund está na final da Champions League! Em uma noite épica no Signal Iduna Park, com a tradicional Muralha Amarela lotada, o BVB eliminou o PSG nas semifinais por 2 a 0 (3 a 1 no agregado) e garantiu sua vaga na grande decisão.</p><p>Os gols foram marcados por Adeyemi e Niclas Füllkrug, em uma noite mágica para a torcida alemã. O Dortmund volta a uma final continental após mais de uma década e tenta o segundo título europeu de sua história — o primeiro veio em 1997.</p><blockquote>"Quero entregar esse troféu para a nossa torcida. Eles merecem", disse o capitão Emre Can após o apito final.</blockquote>`
   },
   {
     id: 'rafael-leao-milan',
@@ -440,13 +440,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'seriea',
     title: 'Rafael Leão lidera Milan na vitória no Derby della Madonnina',
     excerpt: 'Estrela portuguesa brilha no clássico contra a Inter e mantém o Milan na briga.',
-    image: 'https://images.unsplash.com/photo-1522778526097-ce0a22ceb253?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Rafael_Le%C3%A3o_2022.jpg/800px-Rafael_Le%C3%A3o_2022.jpg',
     author: 'Redação SportiqFC',
     time: 'há 22 horas',
     readTime: '4 min',
     views: '34,6 mil',
     exclusive: false,
-    content: `<p>Rafael Leão foi o grande nome do Derby della Madonnina. O craque português liderou o Milan na vitória sobre a Inter com uma atuação brilhante no San Siro.</p>`
+    content: `<p>Rafael Leão foi o grande nome do Derby della Madonnina. O craque português liderou o Milan na vitória por 2 a 0 sobre a Inter com uma atuação brilhante no San Siro, marcando um gol e dando assistência para Christian Pulisic.</p><p>O camisa 10 do Milan voltou a mostrar a versão de jogador decisivo que havia ficado escondida nas últimas temporadas. Foram seis dribles certos, dois chutes no alvo e o gol que abriu o placar em jogada individual partindo do meio-campo.</p><p>Com o resultado, o Milan reduz a distância para os líderes e reabre a briga pelo Scudetto. "O Rafa precisava de um jogo assim. Ele tem essa qualidade", disse Sérgio Conceição.</p>`
   },
   {
     id: 'mbappe-real-hat-trick',
@@ -454,13 +454,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'laliga',
     title: 'Mbappé faz hat-trick e Real Madrid atropela rival no Bernabéu',
     excerpt: 'Astro francês brilha com três gols e uma assistência em atuação dominante do Real.',
-    image: 'https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Kylian_Mbapp%C3%A9_2018.jpg/800px-Kylian_Mbapp%C3%A9_2018.jpg',
     author: 'Redação SportiqFC',
     time: 'há 1 hora',
     readTime: '5 min',
     views: '52,8 mil',
     exclusive: true,
-    content: `<p>Kylian Mbappé fez uma atuação de gala no Santiago Bernabéu, marcando três gols e dando uma assistência na goleada do Real Madrid por 4 a 0. O atacante francês continua justificando as enormes expectativas que vieram com sua chegada.</p><blockquote>"Esse é o clube dos meus sonhos e eu quero vencer tudo aqui", afirmou Mbappé à imprensa após o jogo.</blockquote><p>Com a vitória, o Real Madrid assume a liderança de La Liga, abrindo quatro pontos de vantagem para o segundo colocado.</p>`
+    content: `<p>Kylian Mbappé fez uma atuação de gala no Santiago Bernabéu, marcando três gols e dando uma assistência na goleada do Real Madrid por 4 a 0 sobre o Villarreal. O atacante francês continua justificando as enormes expectativas que vieram com sua chegada como agente livre.</p><p>O primeiro gol saiu logo aos 12 minutos, em finalização cruzada após assistência de Bellingham. O segundo veio em contra-ataque fulminante e o terceiro em cobrança de pênalti. A assistência foi para Vinícius Jr., que fechou o placar.</p><blockquote>"Esse é o clube dos meus sonhos e eu quero vencer tudo aqui. Trabalho para ter noites assim", afirmou Mbappé à imprensa após o jogo.</blockquote><p>Com a vitória, o Real Madrid assume a liderança de La Liga, abrindo quatro pontos de vantagem para o segundo colocado.</p>`
   },
   {
     id: 'haaland-record-epl',
@@ -468,13 +468,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'premier',
     title: "Haaland bate recorde de gols na Premier League em goleada do City",
     excerpt: 'Atacante norueguês alcança 100 gols na liga inglesa mais rápido do que qualquer jogador da história.',
-    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Erling_Haaland_2023_%28cropped-2%29.jpg/800px-Erling_Haaland_2023_%28cropped-2%29.jpg',
     author: 'Redação SportiqFC',
     time: 'há 2 horas',
     readTime: '4 min',
     views: '48,3 mil',
     exclusive: false,
-    content: `<p>Erling Haaland fez história no Etihad Stadium ao se tornar o jogador mais rápido a alcançar 100 gols na Premier League. O norueguês precisou de apenas 105 partidas para atingir a marca, pulverizando o recorde anterior.</p><p>Pep Guardiola elogiou seu atacante após o jogo: "Erling é um fenômeno. Números como esses não acontecem por acaso — é pura dedicação."</p>`
+    content: `<p>Erling Haaland fez história no Etihad Stadium ao se tornar o jogador mais rápido a alcançar 100 gols na Premier League. O norueguês precisou de apenas 105 partidas para atingir a marca, pulverizando o recorde anterior de Alan Shearer, que precisou de 124 jogos.</p><p>O gol que coroou o feito saiu de pênalti, na goleada do Manchester City por 4 a 1 sobre o Brighton. Toda a equipe celebrou ao lado do atacante, que recebeu camisa comemorativa com o número 100 estampado.</p><p>Pep Guardiola elogiou seu atacante após o jogo: "Erling é um fenômeno. Números como esses não acontecem por acaso — é pura dedicação, profissionalismo e fome de gol. Estamos privilegiados de tê-lo."</p>`
   },
   {
     id: 'vini-jr-ballon-dor',
@@ -482,13 +482,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'futebol',
     title: 'Vinícius Jr. é favorito a vencer a Bola de Ouro, diz France Football',
     excerpt: 'Ponta brasileiro lidera votação inicial após temporada espetacular com Real Madrid e Seleção.',
-    image: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Vinicius_Junior_2018.jpg/800px-Vinicius_Junior_2018.jpg',
     author: 'Redação SportiqFC',
     time: 'há 3 horas',
     readTime: '3 min',
     views: '41,7 mil',
     exclusive: true,
-    content: `<p>Vinícius Júnior é o favorito antecipado para levantar a Bola de Ouro este ano, segundo fontes internas da France Football. A fase elétrica do brasileiro pelo Real Madrid e suas atuações decisivas pela Seleção o colocam à frente da concorrência.</p><blockquote>"Seria um sonho realizado. Trabalho todos os dias para ser o melhor do mundo", disse Vini após o treino.</blockquote>`
+    content: `<p>Vinícius Júnior é o favorito antecipado para levantar a Bola de Ouro este ano, segundo fontes internas da France Football. A fase elétrica do brasileiro pelo Real Madrid e suas atuações decisivas pela Seleção o colocam à frente de Mbappé, Rodri e Lamine Yamal na votação preliminar.</p><p>O camisa 7 do Real soma mais de 30 gols na temporada e foi decisivo em jogos importantes na La Liga e na Champions League. Pela Seleção Brasileira, vem sendo líder técnico de Dorival Júnior.</p><blockquote>"Seria um sonho realizado. Trabalho todos os dias para ser o melhor do mundo e ajudar meu time. Se acontecer, dedicarei a todo o Brasil", disse Vini após o treino em Valdebebas.</blockquote>`
   },
   {
     id: 'flamengo-libertadores-final',
@@ -496,13 +496,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Flamengo chega à final da Libertadores após virada dramática',
     excerpt: 'Mengão reverte vantagem de dois gols no Maracanã e garante vaga na decisão continental.',
-    image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Maracana_Stadium_in_Rio_de_Janeiro.jpg/800px-Maracana_Stadium_in_Rio_de_Janeiro.jpg',
     author: 'Redação SportiqFC',
     time: 'há 4 horas',
     readTime: '6 min',
     views: '67,9 mil',
     exclusive: true,
-    content: `<p>Em uma das noites mais eletrizantes do Maracanã nos últimos tempos, o Flamengo reverteu uma desvantagem de 2 a 0 no jogo de ida para se classificar à final da Copa Libertadores. O estádio lotado viu o rubro-negro produzir uma atuação magistral por 4 a 1 no jogo de volta.</p><p>Filipe Luís elogiou o caráter do elenco: "Esse grupo tem mentalidade vencedora. Nunca desistimos."</p>`
+    content: `<p>Em uma das noites mais eletrizantes do Maracanã nos últimos tempos, o Flamengo reverteu uma desvantagem de 2 a 0 no jogo de ida para se classificar à final da Copa Libertadores. O estádio lotado viu o rubro-negro produzir uma atuação magistral, vencendo por 4 a 1 no jogo de volta.</p><p>Os gols foram marcados por Pedro (2), Arrascaeta e Bruno Henrique. A partida ficou marcada também pela pressão constante na primeira meia hora, em que o Flamengo finalizou 14 vezes ao gol adversário.</p><blockquote>"Esse grupo tem mentalidade vencedora. Nunca desistimos. Hoje a torcida foi nosso 12º jogador", disse Filipe Luís emocionado na coletiva.</blockquote><p>O Flamengo agora aguarda o vencedor do outro lado da chave para conhecer seu adversário na final, marcada para novembro em estádio único.</p>`
   },
   {
     id: 'messi-mls-mvp',
@@ -510,13 +510,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'mls',
     title: 'Messi conquista MVP da MLS pelo segundo ano consecutivo',
     excerpt: 'Astro argentino leva o Inter Miami ao Supporters\' Shield e fatura o principal prêmio individual da liga.',
-    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/800px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg',
     author: 'Redação SportiqFC',
     time: 'há 5 horas',
     readTime: '4 min',
     views: '39,4 mil',
     exclusive: false,
-    content: `<p>Lionel Messi foi eleito o Jogador Mais Valioso da MLS pelo segundo ano consecutivo após mais uma temporada estelar com o Inter Miami. O argentino acumulou 25 gols e 18 assistências na temporada regular.</p><blockquote>"Estou aproveitando cada minuto nessa liga. A energia aqui é especial", afirmou Messi durante a cerimônia.</blockquote>`
+    content: `<p>Lionel Messi foi eleito o Jogador Mais Valioso da MLS pelo segundo ano consecutivo após mais uma temporada estelar com o Inter Miami. O argentino acumulou 25 gols e 18 assistências na temporada regular, liderando o time ao Supporters' Shield (melhor campanha geral).</p><p>Aos 38 anos, Messi se mantém em forma e participa diretamente de praticamente todos os gols do Inter Miami. Ao seu lado, antigos companheiros do Barcelona como Suárez, Busquets e Jordi Alba formam um núcleo experiente e vencedor.</p><blockquote>"Estou aproveitando cada minuto nessa liga. A energia aqui é especial e a torcida nos abraça muito. Agora queremos a MLS Cup", afirmou Messi durante a cerimônia.</blockquote>`
   },
   {
     id: 'bayern-bundesliga-title',
@@ -524,13 +524,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'bundesliga',
     title: 'Bayern de Munique encaminha o 13º título consecutivo da Bundesliga',
     excerpt: 'Gigante bávaro abre 10 pontos de vantagem com oito rodadas restantes.',
-    image: 'https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Allianz_Arena_Bayern_M%C3%BCnchen.jpg/800px-Allianz_Arena_Bayern_M%C3%BCnchen.jpg',
     author: 'Redação SportiqFC',
     time: 'há 6 horas',
     readTime: '3 min',
     views: '28,6 mil',
     exclusive: false,
-    content: `<p>O Bayern de Munique está próximo de conquistar mais um título da Bundesliga. Com 10 pontos de vantagem sobre o vice-líder e apenas oito rodadas pela frente, os bávaros parecem imparáveis em busca do 13º campeonato consecutivo.</p>`
+    content: `<p>O Bayern de Munique está próximo de conquistar mais um título da Bundesliga. Com 10 pontos de vantagem sobre o vice-líder Bayer Leverkusen e apenas oito rodadas pela frente, os bávaros parecem imparáveis em busca do 13º campeonato consecutivo.</p><p>Harry Kane lidera a artilharia da competição com mais de 25 gols, enquanto Musiala e Olise são os destaques na criação. Sob o comando de Vincent Kompany, o time recuperou a hegemonia ameaçada pelo Leverkusen na temporada passada.</p><p>O título matemático pode vir já daqui a três rodadas, em confronto direto contra o próprio Leverkusen na Allianz Arena.</p>`
   },
   {
     id: 'palmeiras-mundial-clubes',
@@ -538,13 +538,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Palmeiras se classifica para o novo Mundial de Clubes da FIFA',
     excerpt: 'Verdão se junta ao torneio expandido com 32 equipes após anos de campanhas consistentes no continente.',
-    image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Allianz_Parque_Palmeiras.jpg/800px-Allianz_Parque_Palmeiras.jpg',
     author: 'Redação SportiqFC',
     time: 'há 7 horas',
     readTime: '4 min',
     views: '35,2 mil',
     exclusive: false,
-    content: `<p>O Palmeiras garantiu oficialmente sua vaga no novo formato do Mundial de Clubes da FIFA, que contará com 32 equipes. A classificação é resultado de fortes campanhas na Libertadores nas últimas temporadas.</p><p>Abel Ferreira celebrou a conquista: "É o reconhecimento do nosso trabalho. Agora queremos fazer história no palco mundial."</p>`
+    content: `<p>O Palmeiras garantiu oficialmente sua vaga no novo formato do Mundial de Clubes da FIFA, que contará com 32 equipes. A classificação é resultado de fortes campanhas na Libertadores nas últimas temporadas, que renderam pontos suficientes para o ranking da Conmebol.</p><p>O Verdão se junta a Flamengo, Fluminense e Botafogo como representantes brasileiros no torneio. O sorteio dos grupos acontecerá no próximo mês e o início está marcado para junho.</p><p>Abel Ferreira celebrou a conquista: "É o reconhecimento do nosso trabalho dos últimos anos. Agora queremos fazer história no palco mundial e mostrar a força do futebol brasileiro."</p>`
   },
   {
     id: 'pedri-barcelona-renewal',
@@ -552,27 +552,27 @@ export const newsData: NewsItem[] = [
     categorySlug: 'laliga',
     title: 'Pedri renova com o Barcelona até 2030',
     excerpt: 'Maestro espanhol do meio-campo confirma futuro de longo prazo no Camp Nou com novo contratão.',
-    image: 'https://images.unsplash.com/photo-1614632537190-23e4146777db?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Pedri_2021.jpg/800px-Pedri_2021.jpg',
     author: 'Redação SportiqFC',
     time: 'há 8 horas',
     readTime: '3 min',
     views: '31,5 mil',
     exclusive: false,
-    content: `<p>Pedri assinou um novo contrato com o Barcelona que o vincula ao clube até 2030. O meio-campista espanhol, considerado um dos melhores jovens talentos do futebol mundial, encerrou as especulações sobre uma possível transferência para o exterior.</p><blockquote>"O Barça é a minha casa. Quero conquistar tudo com essa camisa", disse o jogador na cerimônia de assinatura.</blockquote>`
+    content: `<p>Pedri assinou um novo contrato com o Barcelona que o vincula ao clube até junho de 2030. O meio-campista espanhol, considerado um dos melhores jovens talentos do futebol mundial, encerrou as especulações sobre uma possível transferência para o Manchester City e a Bayern de Munique.</p><p>O novo vínculo eleva o salário do canário para perto dos €12 milhões por temporada, com cláusula de rescisão de €1 bilhão. Pedri é peça central no projeto de Hansi Flick e formou ao lado de Frenkie de Jong uma das duplas de meio-campo mais qualificadas da Europa.</p><blockquote>"O Barça é a minha casa. Quero conquistar tudo com essa camisa", disse o jogador na cerimônia de assinatura, ao lado do presidente Joan Laporta.</blockquote>`
   },
   {
     id: 'champions-league-draw',
     category: 'Champions League',
     categorySlug: 'champions',
     title: 'Sorteio das quartas da Champions League traz confrontos arrasadores',
-    excerpt: 'Real Madrid x Manchester City é o destaque entre os duelos das oitavas desta temporada.',
-    image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80',
+    excerpt: 'Real Madrid x Manchester City é o destaque entre os duelos das quartas desta temporada.',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/UEFA_Champions_League.svg/800px-UEFA_Champions_League.svg.png',
     author: 'Redação SportiqFC',
     time: 'há 10 horas',
     readTime: '5 min',
     views: '58,1 mil',
     exclusive: true,
-    content: `<p>O sorteio das quartas de final da UEFA Champions League produziu confrontos espetaculares, com destaque para o duelo entre Real Madrid e Manchester City — uma reedição das dramáticas semifinais de temporadas anteriores.</p><p>Outros confrontos incluem Bayern de Munique x PSG, Arsenal x Barcelona e Inter de Milão x Atlético de Madrid. Os jogos de ida estão marcados para o próximo mês.</p>`
+    content: `<p>O sorteio das quartas de final da UEFA Champions League produziu confrontos espetaculares, com destaque para o duelo entre Real Madrid e Manchester City — uma reedição das dramáticas semifinais de temporadas anteriores que prometeu novamente eletrizar a Europa.</p><p>Outros confrontos: Bayern de Munique x PSG, Arsenal x Barcelona e Inter de Milão x Atlético de Madrid. Os jogos de ida estão marcados para o próximo mês na Europa, e os de volta uma semana depois.</p><p>O grande favorito ao título, segundo as casas de apostas, segue sendo o Real Madrid, mas o Manchester City de Guardiola e o Arsenal de Arteta aparecem logo atrás. Já o PSG, atual vencedor, busca o bicampeonato consecutivo.</p>`
   },
   {
     id: 'neymar-santos-return',
@@ -580,13 +580,13 @@ export const newsData: NewsItem[] = [
     categorySlug: 'brasileirao',
     title: 'Neymar brilha no retorno ao Santos: dois gols na estreia',
     excerpt: 'Craque chega à Vila Belmiro lotada e responde no campo com vitória do Peixe no clássico.',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Bra-Cos_%282%29.jpg/800px-Bra-Cos_%282%29.jpg',
     author: 'Redação SportiqFC',
     time: 'há 12 horas',
     readTime: '6 min',
     views: '89,7 mil',
     exclusive: true,
-    content: `<p>O retorno de Neymar ao Santos não poderia ter começado melhor. Diante de uma Vila Belmiro lotada, o craque marcou duas vezes e comandou o Peixe na vitória por 3 a 1 sobre um rival ferrenho na estreia.</p><blockquote>"Voltar para casa é algo especial. Estou aqui para conquistar títulos e trazer a magia de volta ao Santos", disse Neymar emocionado após o jogo.</blockquote><p>A torcida celebrou a noite como o renascimento de uma era no clube que o revelou ao mundo.</p>`
+    content: `<p>O retorno de Neymar ao Santos não poderia ter começado melhor. Diante de uma Vila Belmiro lotada e com transmissão para 60 países, o craque marcou duas vezes e comandou o Peixe na vitória por 3 a 1 sobre um rival ferrenho na estreia.</p><p>O primeiro gol foi marcado de pênalti, com a tradicional batida cavada no canto direito. O segundo veio em jogada individual digna de seus melhores momentos no Santos: drible em três marcadores antes de chutar cruzado no canto.</p><blockquote>"Voltar para casa é algo especial. Sonhei com esse momento. Estou aqui para conquistar títulos e trazer a magia de volta ao Santos", disse Neymar emocionado após o jogo, ao lado do filho Davi Lucca.</blockquote><p>A torcida celebrou a noite como o renascimento de uma era no clube que o revelou ao mundo. Os ingressos para a próxima partida do Peixe na Vila se esgotaram em menos de uma hora após a venda ser aberta.</p>`
   },
 ];
 
