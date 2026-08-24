@@ -19,8 +19,8 @@ O SportiqFC (nome técnico do projeto: *sports-hub-unlocked*) é um portal de no
 
 ## 🛠️ Stack
 
-![Lovable](https://img.shields.io/badge/Lovable-8A2BE2?style=for-the-badge&logo=lightning&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+[![Lovable](https://img.shields.io/badge/Lovable-8A2BE2?style=for-the-badge&logo=lightning&logoColor=white)](https://lovable.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 
 **Construído com Lovable**
 
